@@ -7,28 +7,28 @@
 <style>
 :root{--bg:#0a0e14;--s1:#131920;--s2:#1a2230;--s3:#222d3d;--bd:#2a3545;--tx:#e2e8f0;--mu:#7a8ba0;--ac:#8b5cf6;--ac2:#a78bfa;--gd:#f0b429;--rd:#ef4444;--gn:#22c55e;--bl:#3b82f6;--or:#f59e0b;--cy:#06b6d4;--pk:#ec4899;--tl:#2dd4bf}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;-webkit-text-size-adjust:100%}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--tx);line-height:1.7;font-size:16px;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .app{max-width:1100px;margin:0 auto;padding:12px}
 
 /* Header */
 .hdr{text-align:center;padding:24px 12px 18px;border-bottom:1px solid var(--bd);margin-bottom:16px}
 .hdr h1{font-size:1.7em;background:linear-gradient(135deg,var(--ac),var(--gd));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hdr p{color:var(--mu);margin-top:4px;font-size:.9em}
+.hdr p{color:var(--mu);margin-top:4px;font-size:.95em}
 .hdr .cd{margin-top:8px;padding:5px 14px;background:var(--s1);border:1px solid var(--ac);border-radius:8px;display:inline-block;color:var(--ac2);font-size:.82em}
 .cst{text-align:center;font-size:.7em;color:var(--mu);margin-bottom:8px}.cst span{color:var(--gn)}
 
 /* Nav — horizontal scroll on mobile */
 .nav{display:flex;gap:5px;margin-bottom:18px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:100;border-bottom:1px solid var(--bd);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
-.nav button{padding:8px 13px;background:var(--s1);color:var(--mu);border:1px solid var(--bd);border-radius:7px;cursor:pointer;font-size:.78em;transition:all .15s;white-space:nowrap;flex-shrink:0}
+.nav button{padding:9px 14px;background:var(--s1);color:var(--mu);border:1px solid var(--bd);border-radius:7px;cursor:pointer;font-size:.88em;transition:all .15s;white-space:nowrap;flex-shrink:0}
 .nav button:hover{border-color:var(--ac);color:var(--tx)}
 .nav button.act{background:var(--ac);color:#fff;border-color:var(--ac)}
 .sec{display:none}.sec.act{display:block}
 
 /* Panel */
 .pnl{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:18px;margin-bottom:16px}
-.pnl h2{font-size:1.2em;color:var(--ac2);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
-.pnl h3{font-size:.98em;color:var(--gd);margin:14px 0 6px}
+.pnl h2{font-size:1.3em;color:var(--ac2);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.pnl h3{font-size:1.05em;color:var(--gd);margin:14px 0 6px}
 
 /* Card entry — responsive */
 .ce{display:flex;gap:12px;background:var(--s2);border-radius:10px;padding:14px;margin-bottom:10px;align-items:flex-start;cursor:pointer;transition:background .15s}
@@ -37,51 +37,51 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .ce-img img{width:100%;border-radius:5px}
 .ce-img .ph{color:var(--mu);font-size:.55em;text-align:center;padding:4px}
 .ce-body{flex:1;min-width:0}
-.ce-name{font-size:.95em;font-weight:700;color:var(--gd);margin-bottom:2px}
-.ce-tags{margin-bottom:3px}
-.ce-goal{font-size:.84em;margin-bottom:4px}.ce-goal b{color:var(--cy)}
-.ce-why{font-size:.82em;color:var(--mu);margin-bottom:3px}
+.ce-name{font-size:1em;font-weight:700;color:var(--gd);margin-bottom:3px}
+.ce-tags{margin-bottom:4px}
+.ce-goal{font-size:.92em;margin-bottom:5px;line-height:1.6}.ce-goal b{color:var(--cy)}
+.ce-why{font-size:.88em;color:var(--mu);margin-bottom:4px;line-height:1.5}
 
 /* Target box — shows what to search/set */
-.targets{background:var(--s3);border-radius:6px;padding:8px 10px;margin-top:6px;font-size:.78em;border-left:2px solid var(--or)}
+.targets{background:var(--s3);border-radius:6px;padding:10px 12px;margin-top:8px;font-size:.85em;border-left:2px solid var(--or);line-height:1.6}
 .targets b{color:var(--or)}
 .targets .t-item{display:inline-block;background:var(--s2);border:1px solid var(--bd);border-radius:4px;padding:1px 7px;margin:2px 2px;font-size:.92em;color:var(--gd);cursor:pointer}
 .targets .t-item:hover{border-color:var(--gd)}
 
 /* Tags */
-.tg{display:inline-block;font-size:.62em;padding:1px 6px;border-radius:8px;font-weight:600;margin-right:2px}
+.tg{display:inline-block;font-size:.7em;padding:2px 7px;border-radius:8px;font-weight:600;margin-right:3px}
 .tg-st{background:rgba(34,197,94,.12);color:var(--gn)}.tg-bo{background:rgba(239,68,68,.12);color:var(--rd)}
 .tg-en{background:rgba(139,92,246,.12);color:var(--ac2)}.tg-pr{background:rgba(6,182,212,.12);color:var(--cy)}
 .tg-ex{background:rgba(245,158,11,.12);color:var(--or)}.tg-nw{background:rgba(236,72,153,.12);color:var(--pk)}
 .tg-sp{background:rgba(45,212,191,.12);color:var(--tl)}.tg-gr{background:rgba(59,130,246,.12);color:var(--bl)}
 
 /* Concept boxes */
-.cpt{background:var(--s2);border-left:3px solid var(--ac);border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0;font-size:.88em}
-.cpt h4{color:var(--ac2);font-size:.9em;margin-bottom:4px}.cpt p{font-size:.92em}
+.cpt{background:var(--s2);border-left:3px solid var(--ac);border-radius:0 8px 8px 0;padding:14px 16px;margin:12px 0;font-size:.94em}
+.cpt h4{color:var(--ac2);font-size:.95em;margin-bottom:5px}.cpt p{font-size:.94em;line-height:1.65}
 .cpt-gn{border-color:var(--gn)}.cpt-gn h4{color:var(--gn)}
 .cpt-rd{border-color:var(--rd)}.cpt-rd h4{color:var(--rd)}
 .cpt-bl{border-color:var(--bl)}.cpt-bl h4{color:var(--bl)}
 .cpt-or{border-color:var(--or)}.cpt-or h4{color:var(--or)}
 
 /* Flow */
-.flow{background:var(--s2);border-radius:8px;padding:12px;margin:10px 0;font-family:'Courier New',monospace;font-size:.72em;color:var(--gn);white-space:pre-wrap;line-height:1.7;overflow-x:auto}
+.flow{background:var(--s2);border-radius:8px;padding:14px;margin:12px 0;font-family:ui-monospace,'SF Mono','Cascadia Code','Segoe UI Mono',Menlo,Consolas,monospace;font-size:.82em;color:var(--gn);white-space:pre-wrap;line-height:1.75;overflow-x:auto}
 
 /* Combo steps */
 .cs{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}.cs:last-child{border-bottom:none}
-.sn{min-width:26px;height:26px;border-radius:50%;background:var(--ac);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75em;flex-shrink:0}
-.sc{flex:1;font-size:.88em}.sc b{color:var(--gd)}.sc .nt{font-size:.88em;color:var(--mu);margin-top:2px}
+.sn{min-width:28px;height:28px;border-radius:50%;background:var(--ac);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82em;flex-shrink:0}
+.sc{flex:1;font-size:.94em;line-height:1.6}.sc b{color:var(--gd)}.sc .nt{font-size:.9em;color:var(--mu);margin-top:3px}
 .cf{background:var(--s2);border-radius:8px;padding:14px;margin:8px 0}
 
 /* Matchup */
 .mu-e{background:var(--s2);border-radius:10px;padding:14px;margin-bottom:12px;border-left:4px solid var(--ac)}
-.mu-e h4{font-size:.98em;margin-bottom:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.badge{font-size:.65em;padding:2px 8px;border-radius:10px;font-weight:700}
+.mu-e h4{font-size:1.05em;margin-bottom:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.badge{font-size:.72em;padding:3px 9px;border-radius:10px;font-weight:700}
 .b-fav{background:rgba(34,197,94,.12);color:var(--gn)}.b-ev{background:rgba(245,158,11,.12);color:var(--or)}.b-un{background:rgba(239,68,68,.12);color:var(--rd)}
-.mu-ht{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.82em}.mu-ht strong{color:var(--rd)}
+.mu-ht{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:8px;padding:12px 14px;margin-top:10px;font-size:.9em;line-height:1.6}.mu-ht strong{color:var(--rd)}
 
 /* Combo tabs */
 .ctabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
-.ctabs button{padding:6px 10px;background:var(--s2);border:1px solid var(--bd);border-radius:6px;color:var(--mu);cursor:pointer;font-size:.78em;transition:all .15s}
+.ctabs button{padding:8px 12px;background:var(--s2);border:1px solid var(--bd);border-radius:6px;color:var(--mu);cursor:pointer;font-size:.88em;transition:all .15s}
 .ctabs button:hover{color:var(--tx);border-color:var(--ac)}
 .ctabs button.act{background:var(--ac);color:#fff;border-color:var(--ac)}
 .cpnl{display:none}.cpnl.act{display:block}
@@ -90,8 +90,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .tl{position:relative;padding-left:24px;margin-top:12px}
 .tl::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:2px;background:var(--bd)}
 .tl-i{position:relative;padding:8px 0 18px}.tl-i::before{content:'';position:absolute;left:-18px;top:12px;width:8px;height:8px;border-radius:50%;background:var(--ac);border:2px solid var(--bg)}
-.tl-i .dl{color:var(--ac2);font-weight:600;font-size:.84em;margin-bottom:2px}
-.tl-i p{font-size:.86em}
+.tl-i .dl{color:var(--ac2);font-weight:600;font-size:.92em;margin-bottom:3px}
+.tl-i p{font-size:.92em;line-height:1.6}
 
 /* Modal */
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;justify-content:center;align-items:flex-start;padding:40px 16px;overflow-y:auto}
@@ -101,28 +101,33 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .modal-top{display:flex;gap:16px;margin-bottom:14px;align-items:flex-start}
 .modal-img{width:140px;border-radius:8px;flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,.5)}
 .modal-info{flex:1;min-width:0}
-.modal-name{font-size:1.1em;font-weight:700;color:var(--gd)}
-.modal-type{font-size:.78em;color:var(--mu);margin-bottom:6px}
-.modal-stats{font-size:.82em;color:var(--ac2);margin-bottom:4px}
-.modal-desc{font-size:.84em;line-height:1.65}
+.modal-name{font-size:1.15em;font-weight:700;color:var(--gd)}
+.modal-type{font-size:.88em;color:var(--mu);margin-bottom:6px}
+.modal-stats{font-size:.9em;color:var(--ac2);margin-bottom:4px}
+.modal-desc{font-size:.92em;line-height:1.7}
 
 /* Mobile */
 @media(max-width:600px){
-  .hdr h1{font-size:1.35em}
+  body{font-size:15px}
+  .hdr h1{font-size:1.3em}
   .pnl{padding:14px}
-  .ce{padding:10px;gap:10px}
+  .ce{padding:12px;gap:10px}
   .ce-img{width:72px;min-height:105px}
-  .ce-name{font-size:.88em}
-  .ce-goal{font-size:.8em}
-  .ce-why{font-size:.78em}
-  .targets{font-size:.74em;padding:6px 8px}
+  .ce-name{font-size:.95em}
+  .ce-goal{font-size:.88em}
+  .ce-why{font-size:.85em}
+  .targets{font-size:.82em;padding:8px 10px}
   .modal-top{flex-direction:column;align-items:center;text-align:center}
   .modal-img{width:160px}
   .modal-c{padding:18px}
-  .flow{font-size:.65em;padding:10px}
-  .cf{padding:10px}
+  .modal-desc{font-size:.9em}
+  .flow{font-size:.75em;padding:12px}
+  .cf{padding:12px}
   .cs{gap:8px}
-  .sc{font-size:.82em}
+  .sc{font-size:.88em}
+  .cpt{font-size:.9em}
+  .cpt p{font-size:.9em}
+  .mu-ht{font-size:.86em}
 }
 </style>
 </head>
@@ -146,15 +151,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <script>
-// ══════════ IndexedDB Cache (card JSON only — images use browser cache) ══════════
-const DB='ygo-v4',ST='d';let db=null,hits=0,misses=0;
-function odb(){return new Promise((r,j)=>{const q=indexedDB.open(DB,1);q.onupgradeneeded=()=>q.result.createObjectStore(ST);q.onsuccess=()=>{db=q.result;r()};q.onerror=()=>{r()}})}
+// ══════════ Image & Data Strategy ══════════
+// Images: local /images/{slug}.jpg first, onerror → YGOPRODeck API
+// Card data: IndexedDB cache → API fallback
+
+const DB='ygo-v5',ST='d';let db=null,hits=0,misses=0,localImgs=0;
+function odb(){return new Promise(r=>{const q=indexedDB.open(DB,1);q.onupgradeneeded=()=>q.result.createObjectStore(ST);q.onsuccess=()=>{db=q.result;r()};q.onerror=()=>{r()}})}
 function cg(k){return new Promise(r=>{if(!db)return r(null);try{const t=db.transaction(ST,'readonly').objectStore(ST).get(k);t.onsuccess=()=>r(t.result||null);t.onerror=()=>r(null)}catch(e){r(null)}})}
 function cp(k,v){try{if(!db)return;const t=db.transaction(ST,'readwrite');t.objectStore(ST).put(v,k)}catch(e){}}
-function ucs(){const e=document.getElementById('cache-info');if(e)e.textContent=`${hits} cached · ${misses} fetched`}
+function ucs(){const e=document.getElementById('cache-info');if(e)e.textContent=`${localImgs} local · ${hits} cached · ${misses} fetched`}
 const API='https://db.ygoprodeck.com/api/v7/cardinfo.php';
 
-// Fetch queue to avoid rate limits — max 4 concurrent, 200ms between
+// Slug: same logic as Python script
+function slugify(name){return name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+
+// Get local image path for a card
+function localImgPath(name){return'images/'+slugify(name)+'.jpg'}
+
+// Fetch queue — max 4 concurrent, 200ms between
 const fetchQ=[];let activeF=0;
 function enqueueF(fn){return new Promise((res,rej)=>{fetchQ.push(()=>fn().then(res,rej));drainQ()})}
 function drainQ(){while(activeF<4&&fetchQ.length){activeF++;const fn=fetchQ.shift();fn().finally(()=>{activeF--;setTimeout(drainQ,200)})}}
@@ -164,7 +178,6 @@ async function fetchCard(name){
   const cached=await cg(k);
   if(cached){hits++;ucs();return cached}
   return enqueueF(async()=>{
-    // Re-check cache (another parallel call may have populated it)
     const c2=await cg(k);if(c2){hits++;ucs();return c2}
     try{
       let r=await fetch(API+'?name='+encodeURIComponent(name));
@@ -177,14 +190,24 @@ async function fetchCard(name){
   });
 }
 
-// Get image URL from cached card data (no blob conversion — browser caches images natively)
-async function getImgUrl(name){
-  const card=await fetchCard(name);
-  return card?.card_images?.[0]?.image_url_small||card?.card_images?.[0]?.image_url||null;
-}
-
-// Alias for modal
+// For modal — get card data
 async function getData(name){return fetchCard(name)}
+
+// Load image into element: try local first, then API fallback
+function loadCardImg(imgEl,name){
+  const local=localImgPath(name);
+  imgEl.src=local;
+  imgEl.onerror=async function(){
+    this.onerror=null;
+    const card=await fetchCard(name);
+    const url=card?.card_images?.[0]?.image_url_small||card?.card_images?.[0]?.image_url;
+    if(url){this.src=url}else{this.parentElement.innerHTML=`<div class="ph">${name}</div>`}
+  };
+  imgEl.onload=function(){
+    if(this.src.includes('images/'))localImgs++;
+    ucs();
+  };
+}
 
 // ══════════ Modal ══════════
 async function openCard(name){
@@ -192,18 +215,27 @@ async function openCard(name){
   b.innerHTML='<p style="color:var(--mu)">Loading...</p>';m.classList.add('show');
   document.body.style.overflow='hidden';
   const card=await getData(name);
-  if(!card){b.innerHTML=`<p>Could not load "${name}". The API may be rate-limited — try again in a few seconds.</p>`;return}
-  const imgUrl=card?.card_images?.[0]?.image_url_small||card?.card_images?.[0]?.image_url||'';
+  if(!card){
+    // Still show local image if available
+    const localSrc=localImgPath(name);
+    b.innerHTML=`<div class="modal-top"><img src="${localSrc}" class="modal-img" onerror="this.style.display='none'">
+    <div class="modal-info"><div class="modal-name">${name}</div>
+    <div class="modal-type">Card data unavailable (API may be rate-limited)</div></div></div>`;return}
+  const imgLocal=localImgPath(name);
+  const imgApi=card?.card_images?.[0]?.image_url_small||card?.card_images?.[0]?.image_url||'';
   const type=[card.type,card.race,card.attribute].filter(Boolean).join(' · ');
   const stats=card.atk!=null?`ATK ${card.atk}`+(card.def!=null?` / DEF ${card.def}`:''):'';
   const lvl=card.level?`Level ${card.level}`:'';
   b.innerHTML=`<div class="modal-top">
-    ${imgUrl?`<img src="${imgUrl}" class="modal-img" crossorigin="anonymous">`:''}
+    <img id="modal-card-img" src="${imgLocal}" class="modal-img">
     <div class="modal-info"><div class="modal-name">${card.name}</div>
     <div class="modal-type">${type}</div>
     ${lvl?`<div class="modal-stats">${lvl}</div>`:''}
     ${stats?`<div class="modal-stats">${stats}</div>`:''}</div></div>
     <div class="modal-desc">${card.desc||''}</div>`;
+  // Fallback for modal image
+  const mi=document.getElementById('modal-card-img');
+  if(mi){mi.onerror=function(){if(imgApi){this.onerror=null;this.src=imgApi}else{this.style.display='none'}}}
 }
 function closeModal(){document.getElementById('modal').classList.remove('show');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
@@ -375,7 +407,9 @@ function mkCard(el,c){
     <div class="ce-body"><div class="ce-tags">${mkT(tags)}</div><div class="ce-name">${display}</div>
     <div class="ce-goal">${goal}</div><div class="ce-why">${why}</div>${tgtHtml}</div>`;
   el.appendChild(d);
-  getImgUrl(api).then(url=>{const c=document.getElementById(iid);if(url&&c)c.innerHTML=`<img src="${url}" loading="lazy" crossorigin="anonymous">`});
+  // Load image: local first → API fallback
+  const imgContainer=document.getElementById(iid);
+  if(imgContainer){const img=document.createElement('img');img.loading='lazy';img.alt=display;loadCardImg(img,api);imgContainer.innerHTML='';imgContainer.appendChild(img)}
 }
 
 function addGroup(title,desc,cards,parent){
@@ -571,7 +605,7 @@ ALL THREE are independent. If one gets Ashed, pivot to another.</div>
   // LOOKUP
   R.insertAdjacentHTML('beforeend',`<div class="sec" id="sec-look"><div class="pnl">
   <h2>Card Lookup</h2>
-  <p style="color:var(--mu);margin-bottom:10px;font-size:.84em">Images cached in IndexedDB — after first load, never hits API again.</p>
+  <p style="color:var(--mu);margin-bottom:10px;font-size:.84em">Run download_images.py to cache images locally. Falls back to YGOPRODeck API.</p>
   <div style="display:flex;gap:6px;margin-bottom:12px">
     <input type="text" id="csrch" placeholder="Card name..." style="flex:1;padding:10px 12px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--tx);font-size:.9em;outline:none" onkeydown="if(event.key==='Enter')doSearch()">
     <button onclick="doSearch()" style="padding:10px 16px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:.88em">Search</button>
@@ -585,7 +619,7 @@ const MU_CARDS={
   ss:[['Sky Striker Mobilize - Engage!','Engage!',['st'],'Searches any SS card. At 3+ GY spells: draws 1. Recycled by Kagari. <b>ASH THIS.</b>',''],
       ['Sky Striker Ace - Raye','Raye',['st'],'Quick: tribute self → SS Link-1. Keeps returning.',''],
       ['Sky Striker Mecha - Widow Anchor','Widow Anchor',['pr'],'Negate 1 monster. At 3+: steal it. Mercourier from hand negates this.',''],
-      ['Sky Striker Ace = Zero','Zero',['bo'],'On summon: search. Quick: tribute → Raye+Roze, pop 1.','']],
+      ['Sky Striker Ace - Zero','Zero',['bo'],'On summon: search. Quick: tribute → Raye+Roze, pop 1.','']],
   fs:[["Fiendsmith's Requiem",'Requiem',['st'],'Tribute self → Engraver from Deck. <b>ASH.</b>',''],
       ['Fiendsmith Engraver','Engraver',['en'],'Gets Requiem equipped → combos. Imperm this.',''],
       ['D/D/D Wave High King Caesar','Caesar',['bo'],'Detach-to-negate. Bait before BF.','']],
@@ -648,13 +682,14 @@ async function doSearch(){
       // Cache each card
       cp('c:'+c.name.toLowerCase(),c);
       const div=document.createElement('div');div.className='ce';div.onclick=()=>openCard(c.name);
-      const imgUrl=c?.card_images?.[0]?.image_url_small||'';
+      const imgApi=c?.card_images?.[0]?.image_url_small||'';
+      const imgLocal=localImgPath(c.name);
       const type=[c.type,c.race,c.attribute].filter(Boolean).join(' · ');
       const stats=c.atk!=null?`ATK ${c.atk}`+(c.def!=null?` / DEF ${c.def}`:''):'';
-      div.innerHTML=`<div class="ce-img">${imgUrl?`<img src="${imgUrl}" crossorigin="anonymous">`:`<div class="ph">${c.name}</div>`}</div>
+      div.innerHTML=`<div class="ce-img"><img src="${imgLocal}" loading="lazy" onerror="if('${imgApi}'){this.onerror=null;this.src='${imgApi}'}else{this.parentElement.innerHTML='<div class=ph>${c.name}</div>'}"></div>
         <div class="ce-body"><div class="ce-name">${c.name}</div>
-        <div style="font-size:.78em;color:var(--mu)">${type} ${stats?'· '+stats:''}</div>
-        <div style="font-size:.8em;margin-top:4px">${(c.desc||'').slice(0,180)}${(c.desc||'').length>180?'...':''}</div></div>`;
+        <div style="font-size:.85em;color:var(--mu)">${type} ${stats?'· '+stats:''}</div>
+        <div style="font-size:.88em;margin-top:4px;line-height:1.5">${(c.desc||'').slice(0,180)}${(c.desc||'').length>180?'...':''}</div></div>`;
       r.appendChild(div);
     }
   }catch{r.innerHTML='<p style="color:var(--mu)">No results.</p>'}
