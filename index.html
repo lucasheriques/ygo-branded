@@ -564,6 +564,10 @@ IDEAL: FotW first (bait Ash) → then Branded Fusion (full combo).</div>
 
   // ALL CARDS
   const cSec=document.createElement('div');cSec.className='sec';cSec.id='sec-cards';
+  const cFilter=document.createElement('div');cFilter.style.cssText='padding:10px 12px;margin-bottom:12px';
+  cFilter.innerHTML='<input type="text" id="cardFilter" placeholder="Search cards by name..." style="width:100%;padding:10px 12px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--tx);font-size:.9em;outline:none;box-sizing:border-box">';
+  cSec.appendChild(cFilter);
+  setTimeout(()=>{const fi=document.getElementById('cardFilter');if(fi)fi.addEventListener('input',()=>{const q=fi.value.toLowerCase().trim();document.querySelectorAll('#sec-cards .cd').forEach(c=>{const n=c.querySelector('.cn');c.style.display=(!q||n&&n.textContent.toLowerCase().includes(q))?'':'none'});document.querySelectorAll('#sec-cards .pnl').forEach(p=>{const vis=[...p.querySelectorAll('.cd')].some(c=>c.style.display!=='none');if(p.querySelector('h2'))p.style.display=(!q||vis)?'':'none'})})},100);
   addGroup('Starters & Key Spells','These begin your combos. Click any card for full API text.',C.core,cSec);
   addGroup('Engine & Support','These do their work when sent to GY or banished.',C.engine,cSec);
   addGroup('Extra Deck (Fusion & Synchro)','Note: Ecclesia and the Dark Dragon is a SYNCHRO.',C.ed,cSec);
@@ -758,28 +762,66 @@ const MU_CARDS={
       ['Radiant Typhoon Mandate','Mandate',['pr'],'Trap negate — only when MST activates.','']],
   dt:[['Dracotail Lukias','Lukias',['st'],'On summon: search Dracotail monster.',''],
       ['Rahu Dracotail','Rahu Dracotail',['sp'],'Fusion using monsters from DECK.','']],
+  ym:[['Yummy Snatchy','Snatchy',['st'],'Link-1. On summon: place Yummy Field Spell. Quick Effect: Synchro Summon using a Yummy (either turn). <b>IMPERM/VEILER THIS.</b>',''],
+      ['Cooky Yummy Way','Cooky Way',['bo','pr'],'L2 Synchro. On summon: flip 2 face-up monsters face-down (Book of Moon x2).',''],
+      ['Cupsy Yummy Way','Cupsy Way',['bo'],'L2 Synchro. Bounces cards. When opp activates: return self to ED → summon 2 Yummy from GY.','']],
+  ll:[['Lunalight Gold Leo','Gold Leo',['st'],'On summon: search any Lunalight + discard. The discard triggers GY effects. <b>ASH THIS.</b>',''],
+      ['Lunalight Kaleido Chick','Kaleido Chick',['en'],'Send Lunalight from Deck to GY (soft OPT). Name-copies the sent monster. Key combo extender.',''],
+      ['Lunalight Liger Dancer','Liger Dancer',['bo'],'Towers: only affected by Lunalight cards. Quick Effect: destroy all other Special Summoned monsters. Attacks twice.','']],
+  me:[['Mementotlan Dark Blade','Dark Blade',['st'],'Destroy a Memento you control → summon any Memento from Deck. Best starter. <b>ASH THIS.</b>',''],
+      ['Mementotlan Angwitch','Angwitch',['st','en'],'On summon: search any Memento card. Also revives L2-or-lower from GY. <b>ASH if no other starters.</b>',''],
+      ['Mementoal Tecuhtlica - Combined Creation','Combined Creation',['bo'],'Boss. Attacks all opp monsters. When opp activates: summon Mementos from hand/GY. Protected by Goblin (targeting) and Mace (steals monsters).','']],
 };
 
 function buildMU(R){
   const s=document.createElement('div');s.className='sec';s.id='sec-mu';
   const defs=[
-    ['Sky Striker','b-fav','Favored','Control: 1 monster + recycling spells. Engage searches everything. Spells get bonuses at 3+ in GY.','ss',
-      'Ash → Engage. Imperm → Kagari/Zero. Ghost Ogre → Widow Anchor. Ignore Raye.'],
-    ['Fiendsmith','b-ev','Even','Combo. Requiem tributes → Engraver from Deck → Link/Xyz bosses with multiple negates.','fs',
-      'Ash → Requiem. Imperm → Engraver. Bait negates before BF.'],
-    ['Mitsurugi','b-ev','Even','Ritual combo. End of the World Ruler pays LP → banishes Ritual Spell from Deck → tributes from DECK.','mt',
-      'Ash → Ruler (Deck banish). Droll after any search. Early damage matters (2000 LP/use).'],
-    ['K9 Vanquish Soul','b-ev','Even','Mid-range. Reveals from hand for effects. K9 adds L5 spam + quick bounce. Hand IS resource.','vs',
-      'Ash → Razen. Imperm weaker (hand reveals). Kaijus great.'],
-    ['Maliss','b-un','Slightly Unfavored','Combo. White Rabbit sets trap from Deck → summons Dormouse → Link chain. Strong recursion. HARDEST MU.','ma',
-      'Ash → White Rabbit. Nibiru good. Win die roll.'],
-    ['Radiant Typhoon','b-fav','Slightly Favored','WIND Quick-Play Spell archetype. Krosea searches on Quick-Play activation. Mandate is their negate (needs MST).','rt',
-      'Ash → Krosea (search). Anti-Spell Fragrance devastating. Solemn Report banishes key spells.'],
-    ['Dracotail','b-ev','Even','Fusion archetype. Monsters set S/T from Deck when used as Fusion Material. Rahu fuses from DECK.','dt',
-      'Ash → Lukias or Rahu. Side S/T removal for their traps. Patient grind.'],
-    ['Branded Dracotail','b-ev','Even (Mirror)','Branded + Dracotail hybrid. Same Mirrorjade plan. Whoever resolves fusion spell first wins.',null,
-      'Mercourier for their Mirrorjade. Ash their BF/Rahu. Dimensional Barrier (Fusion) in side.'],
+    ['Yummy','b-un','Slightly Unfavored','<b>Synchro combo — 300th YCS winner.</b> Level 1 monsters Synchro into L2 Yummy Synchros using Link-1 Snatchy as Tuner. Their Synchros have a shared Quick Effect: when you activate anything, they return to ED and summon 2 Yummy from GY — creating an endless advantage loop. Each revived Yummy triggers an empowered effect (draw, bounce, flip face-down). Small engine = lots of room for hand traps. They play on both turns like we do, but their recursion is faster. <b>Cooky Way flips 2 monsters face-down on summon</b> — this shuts off Mirrorjade.','ym',
+      'Imperm/Veiler → <b>Snatchy</b> (stops Quick Effect Synchro Summon — this is THE choke). Ash → Snatchy\'s Field Spell placement or any Yummy that searches. Nibiru is weak (small monsters = small token). D-Shifter devastating (kills their GY loop). Macro Cosmos in side.'],
+    ['Lunalight','b-ev','Even','<b>Fusion aggro — YCS Top 8.</b> Goal: Fusion Summon 1-2 copies of Liger Dancer, a Towers that only Lunalight cards can affect. Quick Effect: destroy all other Special Summoned monsters on the field. Attacks twice. Their turn 1 sets up Liger + Hound (spell negate), then turn 2 they OTK through your board via Liger\'s board wipe + double attack. Gold Leo searches on Normal Summon, then discards a Lunalight to trigger its GY effect — this single card starts the whole engine. Kaleido Chick sends from Deck to GY and copies names for Fusion. They go through Xyz (Nyarla) into Cross-Sheep to extend. <b>Liger Dancer is immune to Mirrorjade\'s banish</b> (unaffected by non-Lunalight cards).','ll',
+      'Ash → <b>Gold Leo</b> (on-summon search — kills the combo if they have no backup). Imperm → Gold Leo also works. Droll after first search but before Wolf is accessed. Nibiru is WEAK (they play through it and still end on Liger). Kaiju/Lava Golem the Liger — only clean answer. Forbidden Droplet does NOT work (unaffected).'],
+    ['Memento','b-ev','Even','<b>Midrange combo — YCS Top 4.</b> Self-destructing monsters that fill the GY fast to summon boss: Combined Creation — attacks all your monsters and summons Mementos from hand/GY whenever you activate effects. Protected by hand-trap-like monsters: Goblin (blocks targeting your Mementos), Mace (steals your monster). Dark Blade is the best starter: destroys itself → summons any Memento from Deck (Angwitch usually). Angwitch searches anything. Very resilient to single hand traps — they chain through disruption because each monster replaces itself. Creation King (Fusion) dumps 3 cards from Deck on summon for more extension.','me',
+      'Ash → <b>Dark Blade</b> (summon from Deck) or <b>Angwitch</b> (search). Single Ash often not enough — pair with another HT. Droll + another HT = strong. Imperm/Veiler are weak (their Quick-Play spells dodge targeting). D-Shifter good. Bystials can banish DARK pieces. Negate their Fusion Summon if possible.'],
+    ['Maliss','b-un','Slightly Unfavored','<b>Combo — YCS Top 8 x2.</b> White Rabbit Normal Summons and sets a Maliss trap from Deck. That trap summons Dormouse, which extends into a Link chain with strong recursion. They build boards with multiple negates and recycle through their GY. Very strong going first. One of Branded\'s hardest matchups because their trap engine dodges most of our interaction and they combo faster than we set up.','ma',
+      'Ash → <b>White Rabbit</b> (Deck set — kills the engine). Nibiru good (they summon 5+ before boss). Win the die roll. Side Cosmic Cyclone to banish their traps.'],
+    ['K9 Vanquish Soul','b-ev','Even','<b>Mid-range.</b> Reveals monsters from hand to activate effects (FIRE = pop, DARK = banish, EARTH = search). K9 package adds L5 spam + quick bounce removal. Their hand IS their resource — they don\'t commit to the board, they reveal and activate from hand. This makes them hard to interact with using board-based disruption. Caesar Valius is their boss (3000 beater + searches on attack). Dr. Mad Love searches VS spells/traps. Some builds run D-Shifter since they don\'t rely on GY.','vs',
+      'Ash → <b>Razen</b> (Normal Summon search). Imperm is weak (hand reveals don\'t use field effects). Kaijus are great (removes Caesar Valius cleanly). Watch for their D-Shifter — devastating for us.'],
+    ['Sky Striker','b-fav','Favored','<b>Control: 1 monster zone + recycling spells.</b> They maintain exactly 1 Link monster in the Extra Monster Zone and cycle through powerful spells that gain bonuses at 3+ spells in GY. Engage searches any Sky Striker card (+ draws 1 at 3+ GY spells) and gets recycled by Kagari every turn. Widow Anchor negates a monster (at 3+: steals it). Raye tributes from field to summon a new Link-1 — she keeps coming back. Slow but consistent. We outpace them because our Fusion engine generates more advantage per turn than their spell recycling.','ss',
+      'Ash → <b>Engage</b> (kills their search — huge tempo loss). Imperm → Kagari or Zero on summon. Ghost Ogre → Widow Anchor (destroy on activation). Ignore Raye (she always comes back, don\'t waste resources).'],
+    ['Fiendsmith','b-ev','Even','<b>Combo.</b> Requiem tributes itself to summon Engraver from Deck. Engraver equips Requiem and combos into Link/Xyz bosses with multiple negates (Caesar = detach-to-negate). They build a board with 2-3 negates going first. Our goal: bait negates before resolving Branded Fusion. If we resolve BF through their board, we usually win because our grind game is stronger.','fs',
+      'Ash → <b>Requiem</b> (tribute to summon from Deck — shuts down the combo). Imperm → <b>Engraver</b> (stops the equip combo). Bait negates (Caesar) before playing BF.'],
+    ['Mitsurugi','b-ev','Even','<b>Ritual combo.</b> End of the World Ruler reveals a monster + pays 2000 LP → banishes a Ritual Spell from Deck → Ritual Summons tributing from DECK (not hand!). This means they don\'t lose hand cards, similar to our Branded Fusion. Their LP cost matters — each Ruler activation is -2000 LP, so early chip damage adds up fast. Some builds hybrid with Yummy for extra grind.','mt',
+      'Ash → <b>Ruler</b> (the Deck banish is the key effect). Droll after any search. Early damage matters (2000 LP per Ruler use adds up). Push for game when they\'re low.'],
+    ['Radiant Typhoon','b-fav','Slightly Favored','<b>WIND Quick-Play Spell archetype.</b> Krosea summons itself whenever a Quick-Play activates, then searches any RT card or MST. Meghala is the only RT that summons from Deck. Their negate (Mandate) only works when an MST is activated — so they need MST live. We\'re favored because our engine is more resilient and Mirrorjade\'s banish handles their board efficiently.','rt',
+      'Ash → <b>Krosea</b> (on-summon search). Anti-Spell Fragrance is devastating (kills their Quick-Play engine). Solemn Report banishes key spells.'],
+    ['Dracotail','b-ev','Even','<b>Fusion archetype.</b> When monsters are used as Fusion Material, they set S/T from Deck (free backrow). Rahu fuses using monsters from DECK. Lukias searches any Dracotail on summon. They build a board of Fusions with trap protection. Patient grind matchup — don\'t overcommit into their traps. Their boss Gulamel has recursion built in.','dt',
+      'Ash → <b>Lukias</b> (search) or <b>Rahu</b> (Deck fusion). Side S/T removal for their set traps. Patient grind — don\'t overextend.'],
+    ['Branded Dracotail','b-ev','Even (Mirror)','<b>Branded + Dracotail hybrid.</b> Same Mirrorjade plan as us, but with Dracotail\'s trap generation layered on top. Whoever resolves their fusion spell first usually wins. Their Rahu fuses from Deck and sets traps as bonus. In the mirror, Mercourier is your MVP — save it for their Mirrorjade\'s banish effect.',null,
+      'Mercourier for their Mirrorjade. Ash → their BF or Rahu. Dimensional Barrier (Fusion) in side deck.'],
   ];
+  // Rogue matchups — choke points only
+  // Rogue section
+  const rg=document.createElement('div');rg.className='pnl';
+  rg.innerHTML=`<h2>Rogue Decks — Choke Points</h2>
+  <p style="color:var(--mu);margin-bottom:10px;font-size:.86em">These won't dominate a regional, but can steal a match if you're unprepared.</p>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Magnet Warrior</h4>
+  <p><b>Rock combo.</b> 17+ starters. Boss: Imperion Magnum (omni-negate) + Naturia Beast (unlimited spell negate). Very resilient to single hand traps.</p>
+  <p><b>Choke:</b> Ash → Beta the Electromagnet Warrior (search). D-Shifter good. Kaiju the Imperion. If they resolve Naturia Beast, your spells are off — side S/T removal.</p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Tri-Brigade</h4>
+  <p><b>Link combo.</b> Banish from GY to Link Summon. Shuraig banishes on summon. Revolt (trap) summons from banished during opp turn.</p>
+  <p><b>Choke:</b> Ash → Fraktall (send from Deck). Imperm → Nervall or Kitt on summon. Negate Revolt if possible.</p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Shaddoll</h4>
+  <p><b>Fusion control.</b> Monsters trigger when sent to GY by card effect (flip effects too). Winda = only 1 Special Summon per turn.</p>
+  <p><b>Choke:</b> Ash → El Shaddoll Fusion (from Deck). Kaiju/out Winda immediately — 1 SS/turn kills us. Super Poly is their weapon too.</p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Rescue-ACE</h4>
+  <p><b>Control + Quick-Play engine.</b> RESCUE! searches Quick-Play interruptions. Turbulence summons from Deck.</p>
+  <p><b>Choke:</b> Ash → Turbulence (summon from Deck). Imperm → any on-summon searcher. Remove their set Quick-Plays before committing.</p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Tenpai Dragon</h4>
+  <p><b>OTK burn.</b> Battle Phase Synchro Summons that deal burn damage. Can OTK from empty board through a single monster.</p>
+  <p><b>Choke:</b> Nibiru during Battle Phase (they Synchro during BP). Mirrorjade banish their Tenpai before BP. Don't pass with low LP and no interaction.</p></div>`;
+  s.appendChild(rg);
+
+  s.insertAdjacentHTML('afterbegin','<div class="pnl"><h2>Matchups</h2><div class="cpt cpt-bl"><h4>300th YCS Richmond Results (Feb 2026)</h4><p>Winner: Yummy. Runner-up: Vanquish Soul. Top 4: Memento, Dracotail. Top 8: 2x Maliss, Dracotail, Lunalight. 2,252 players.</p></div></div>');
 
   defs.forEach(([name,badge,label,desc,key,ht])=>{
     const p=document.createElement('div');p.className='pnl';
