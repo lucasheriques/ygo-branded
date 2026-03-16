@@ -200,7 +200,7 @@ function loadCardImg(imgEl,name){
   imgEl.onerror=async function(){
     this.onerror=null;
     const card=await fetchCard(name);
-    const url=card?.card_images?.[0]?.image_url_small||card?.card_images?.[0]?.image_url;
+    const url=card?.card_images?.[0]?.image_url||card?.card_images?.[0]?.image_url_small;
     if(url){this.src=url}else{this.parentElement.innerHTML=`<div class="ph">${name}</div>`}
   };
   imgEl.onload=function(){
@@ -222,7 +222,7 @@ async function openCard(name){
     <div class="modal-info"><div class="modal-name">${name}</div>
     <div class="modal-type">Card data unavailable (API may be rate-limited)</div></div></div>`;return}
   const imgLocal=localImgPath(name);
-  const imgApi=card?.card_images?.[0]?.image_url_small||card?.card_images?.[0]?.image_url||'';
+  const imgApi=card?.card_images?.[0]?.image_url||card?.card_images?.[0]?.image_url_small||'';
   const type=[card.type,card.race,card.attribute].filter(Boolean).join(' · ');
   const stats=card.atk!=null?`ATK ${card.atk}`+(card.def!=null?` / DEF ${card.def}`:''):'';
   const lvl=card.level?`Level ${card.level}`:'';
@@ -682,7 +682,7 @@ async function doSearch(){
       // Cache each card
       cp('c:'+c.name.toLowerCase(),c);
       const div=document.createElement('div');div.className='ce';div.onclick=()=>openCard(c.name);
-      const imgApi=c?.card_images?.[0]?.image_url_small||'';
+      const imgApi=c?.card_images?.[0]?.image_url||c?.card_images?.[0]?.image_url_small||'';
       const imgLocal=localImgPath(c.name);
       const type=[c.type,c.race,c.attribute].filter(Boolean).join(' · ');
       const stats=c.atk!=null?`ATK ${c.atk}`+(c.def!=null?` / DEF ${c.def}`:''):'';

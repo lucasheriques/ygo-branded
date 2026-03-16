@@ -1,17 +1,29 @@
 #!/usr/bin/env python3
-"""Download all YuGiOh card images used in the Branded guide locally."""
+"""Download all YuGiOh card images used in the Branded guide locally (HD).
 
+Uses asyncio + aiohttp for concurrent downloads. Run with:
+  uv run --with aiohttp download_images.py
+  # or: pip install aiohttp && python download_images.py
+"""
+
+import asyncio
 import json
 import os
 import re
-import time
-import urllib.request
-import urllib.error
+import sys
+
+try:
+    import aiohttp
+except ImportError:
+    print("aiohttp required. Install with: pip install aiohttp")
+    print("Or run with: uv run --with aiohttp download_images.py")
+    sys.exit(1)
 
 API = "https://db.ygoprodeck.com/api/v7/cardinfo.php"
 IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "images")
+MAX_CONCURRENT = 6  # concurrent downloads
 
-# All card names used in the guide (main cards + target references + matchup cards)
+# All card names used in the guide
 CARDS = [
     # Core starters
     "Branded Fusion",
@@ -73,86 +85,101 @@ def slugify(name: str) -> str:
     """Convert card name to a safe filename slug."""
     s = name.lower()
     s = re.sub(r"[^a-z0-9]+", "-", s)
-    s = s.strip("-")
-    return s
+    return s.strip("-")
 
 
-def fetch_card(name: str) -> dict | None:
+# Minimum file size for HD images (low-res are ~25-33KB, HD are ~60KB+)
+MIN_HD_SIZE = 50_000
+
+
+async def fetch_card(session: aiohttp.ClientSession, name: str) -> dict | None:
     """Fetch card data from YGOPRODeck API."""
-    url = f"{API}?name={urllib.request.quote(name)}"
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "YGO-Branded-Guide/1.0"})
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read())
-            return data.get("data", [None])[0]
-    except Exception:
-        # Try fuzzy search
-        url = f"{API}?fname={urllib.request.quote(name)}"
+    for query_param in ["name", "fname"]:
+        url = f"{API}?{query_param}={name}"
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "YGO-Branded-Guide/1.0"})
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                data = json.loads(resp.read())
-                return data.get("data", [None])[0]
-        except Exception as e:
-            print(f"  ERROR fetching {name}: {e}")
-            return None
+            async with session.get(url, timeout=aiohttp.ClientTimeout(total=15)) as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    card = (data.get("data") or [None])[0]
+                    if card:
+                        return card
+        except Exception:
+            pass
+    return None
 
 
-def download_image(url: str, path: str) -> bool:
+async def download_image(session: aiohttp.ClientSession, url: str, path: str) -> bool:
     """Download image from URL to path."""
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "YGO-Branded-Guide/1.0"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
+        async with session.get(url, timeout=aiohttp.ClientTimeout(total=30)) as resp:
+            if resp.status != 200:
+                return False
+            data = await resp.read()
             with open(path, "wb") as f:
-                f.write(resp.read())
-        return True
+                f.write(data)
+            return True
     except Exception as e:
         print(f"  ERROR downloading: {e}")
         return False
 
 
-def main():
-    os.makedirs(IMG_DIR, exist_ok=True)
-
-    total = len(CARDS)
-    success = 0
-    skipped = 0
-
-    for i, name in enumerate(CARDS, 1):
+async def process_card(
+    session: aiohttp.ClientSession,
+    semaphore: asyncio.Semaphore,
+    name: str,
+    index: int,
+    total: int,
+) -> bool:
+    """Process a single card: fetch data + download HD image."""
+    async with semaphore:
         slug = slugify(name)
-        small_path = os.path.join(IMG_DIR, f"{slug}.jpg")
+        path = os.path.join(IMG_DIR, f"{slug}.jpg")
 
-        # Skip if already downloaded
-        if os.path.exists(small_path) and os.path.getsize(small_path) > 1000:
-            print(f"[{i}/{total}] SKIP (exists): {name}")
-            skipped += 1
-            success += 1
-            continue
+        # Skip if already downloaded in HD (>50KB = likely full res)
+        if os.path.exists(path) and os.path.getsize(path) > MIN_HD_SIZE:
+            print(f"[{index}/{total}] SKIP (HD exists): {name}")
+            return True
 
-        print(f"[{i}/{total}] Fetching: {name}")
-        card = fetch_card(name)
+        print(f"[{index}/{total}] Fetching: {name}")
+        card = await fetch_card(session, name)
         if not card:
             print(f"  NOT FOUND in API")
-            continue
+            return False
 
         images = card.get("card_images", [{}])[0]
-        small_url = images.get("image_url_small") or images.get("image_url")
-
-        if not small_url:
+        # Prefer full HD image (image_url), NOT image_url_small
+        hd_url = images.get("image_url")
+        if not hd_url:
+            hd_url = images.get("image_url_small")
+        if not hd_url:
             print(f"  NO IMAGE URL")
-            continue
+            return False
 
-        if download_image(small_url, small_path):
-            success += 1
-            print(f"  OK → {slug}.jpg")
+        if await download_image(session, hd_url, path):
+            size_kb = os.path.getsize(path) / 1024
+            print(f"  OK → {slug}.jpg ({size_kb:.0f}KB)")
+            return True
         else:
             print(f"  FAILED")
+            return False
 
-        # Rate limit: 250ms between requests
-        time.sleep(0.25)
 
-    print(f"\nDone: {success}/{total} cards ({skipped} skipped, {success - skipped} downloaded)")
+async def main():
+    os.makedirs(IMG_DIR, exist_ok=True)
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT)
+    total = len(CARDS)
+
+    headers = {"User-Agent": "YGO-Branded-Guide/1.0"}
+    async with aiohttp.ClientSession(headers=headers) as session:
+        tasks = [
+            process_card(session, semaphore, name, i, total)
+            for i, name in enumerate(CARDS, 1)
+        ]
+        results = await asyncio.gather(*tasks)
+
+    success = sum(1 for r in results if r)
+    print(f"\nDone: {success}/{total} cards downloaded/verified")
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
