@@ -265,7 +265,7 @@ core:[
 
   ['Fallen of the White Dragon','Fallen of the White Dragon',['st','nw'],
     '<b>Goal:</b> Self-summon from hand by sending an "Albaz" Fusion from ED to GY (COST — can\'t be negated). On summon: recruit any "Ecclesia" from hand/Deck/GY.',
-    'Always treated as "Fallen of Albaz." Lock: L8 Fusion/Synchro only. Run 2-3.',
+    'Always treated as "Fallen of Albaz." The ED send is a <b>COST</b>, so even if the opponent negates the summon with Solemn Strike, the Fusion you sent (usually Albion) is already in GY and will still trigger its End Phase effect. <b>Lock:</b> for the rest of the turn you can only summon L8+ Fusions or Synchros from the ED — but everything you want to make is L8 anyway (Mirrorjade, Ecclesia Synchro, Lubellion). Great Ash bait: if you have both FotW and Branded Fusion, lead with FotW first — if they Ash it, you still have Branded Fusion. If they let it resolve, you\'ve already set up the Ecclesia Synchro line. <b>Run 2-3.</b>',
     {label:'Usual ED sends (and why)',items:[['Albion the Branded Dragon','— best default. His GY End Phase effect sets Branded in Red for free, giving you a Fusion Summon on opponent\'s turn.'],['Titaniklad the Ash Dragon','— if you already have Branded in Red or need bodies. His End Phase adds/summons Cartesia or Quem from Deck, giving you a monster for next turn.']]}],
 
   ['Albion the Shrouded Dragon','Albion the Shrouded Dragon',['st','en'],
@@ -286,7 +286,7 @@ core:[
 
   ['The Fallen & The Virtuous','The Fallen & The Virtuous',['nw','sp','st'],
     '<b>Goal:</b> Quick-Play Spell (always treated as "Branded" + "Dogmatika"). Choose 1: (A) Send Albaz Fusion from ED to GY → target 1 face-up card → destroy it. (B) If Ecclesia in field/GY: target 1 monster in either GY → Special Summon to your field.',
-    'Two-in-one: removal + revival. Effect (A) sends Albion/Titaniklad from ED → triggers their GY effects AND destroys a card. Effect (B) revives anything from either GY. Run 3.',
+    'Two-in-one: removal + revival. Effect (A) sends Albion/Titaniklad from ED → triggers their GY effects AND destroys a card — that\'s a 2-for-1 from one Quick-Play. Effect (B) revives anything from either GY (steal their boss monster!) but needs Ecclesia in field or GY first. Since it\'s treated as "Branded," it\'s searchable by <b>Aluber, Springans Kitt, and Branded Opening</b>. Since it\'s also "Dogmatika," Incredible Ecclesia can search it too. One of the strongest BPRO additions. <b>Run 3.</b>',
     {label:'Usual ED sends for effect (A)',items:[['Albion the Branded Dragon','— default. GY End Phase sets Branded in Red or Retribution from Deck. Best value send.'],['Titaniklad the Ash Dragon','— if you need a body. End Phase adds/summons Cartesia or Quem from Deck.'],['Granguignol the Dusk Dragon','— can trigger if opponent summons later (banish → summon Dogmatika from Deck).']]}],
 
   ['Aluber the Jester of Despia','Aluber the Jester of Despia',['st'],
@@ -302,8 +302,8 @@ core:[
 
 engine:[
   ['Fallen of Albaz','Fallen of Albaz',['en'],
-    '<b>Goal:</b> The name the archetype references. Sent from Deck as Fusion Material. Lubellion shuffles him back.',
-    'Rarely summoned. 1 copy — recycled by Lubellion.',null],
+    '<b>Goal:</b> The name everything references. Sent from Deck as Fusion Material (via Branded Fusion). On field: can fuse using opponent\'s monsters as material (contact fusion). Lubellion shuffles him back from GY to Deck for reuse.',
+    'You almost never Normal Summon him — he lives in the Deck and gets sent as material. Having "Albaz" in GY is important: it\'s the condition for Blazing Cartesia to self-summon from hand, and Fallen of White/Shrouded count as his name on field/GY. Lubellion recycling him back to Deck means you never run out. <b>Run 1.</b>',null],
 
   ['Guiding Quem, the Virtuous','Guiding Quem, the Virtuous',['en','nw'],
     '<b>Goal:</b> (Treated as "Dogmatika" + "Despia".) On summon: send "Fallen of Albaz" or mentioning card from Deck to GY. If a card leaves ED: target Albaz-mentioning monster in GY → summon it.',
@@ -311,9 +311,9 @@ engine:[
     {label:'Usual Deck dumps (and why)',items:[['Albion the Shrouded Dragon','— #1 choice. Shrouded in GY chains into sending Branded Retribution → banish Retribution → recover Branded Fusion. Full recycle.'],['Fallen of Albaz','— if you need the "Albaz" name in GY so Cartesia can self-summon from hand.'],['Blazing Cartesia, the Virtuous','— safe dump. She returns to hand during End Phase if any Fusion hit GY, so you don\'t lose her.']]}],
 
   ['Incredible Ecclesia, the Virtuous','Incredible Ecclesia, the Virtuous',['en','nw'],
-    '<b>Goal:</b> L4 Tuner. Recruited by Fallen of White. On summon: search "Swordsoul" or "Dogmatika" card. Self-summons if opponent has more monsters.',
-    'Bridge to L8 Synchro. Run 1.',
-    {label:'Usual searches (and why)',items:[['Guiding Quem, the Virtuous','— default (treated as Dogmatika). Dump + revive engine on summon.'],['The Fallen & The Virtuous','— if you need the Albaz + Ecclesia name bridge.']]}],
+    '<b>Goal:</b> L4 Tuner. On Normal/Special Summon: search 1 "Swordsoul" or "Dogmatika" card. Can self-summon from hand if opponent controls more monsters than you.',
+    'You almost never Normal Summon her — she\'s recruited from Deck by <b>Fallen of White</b>. When she hits the field, she searches (usually Guiding Quem), giving you free advantage <i>before</i> she becomes Synchro material. Then FotW (L4) + Ecclesia (L4 Tuner) = Ecclesia and the Dark Dragon (L8 Synchro). Her being in the GY also matters: she enables The Fallen &amp; The Virtuous effect (B) and powers up The Dragon that Devours the Dogma (unaffected by effects). The self-summon clause is a backup for going second when the opponent has monsters out. <b>Run 1.</b>',
+    {label:'Usual searches (and why)',items:[['Guiding Quem, the Virtuous','— #1 default (treated as Dogmatika). Quem dumps from Deck on summon and revives monsters when cards leave ED. Best value.'],['The Fallen & The Virtuous','— if you need removal or revival. Treated as both "Branded" and "Dogmatika," and its effect (B) needs an Ecclesia in field/GY to work.']]}],
 
   ['Tri-Brigade Mercourier','Tri-Brigade Mercourier',['pr','en'],
     '<b>Goal:</b> (1) Send from <b>HAND or FIELD</b> to GY → negate a monster effect while you control an Albaz Fusion. (2) If <b>banished</b>: add Albaz-mentioning monster from Deck.',
@@ -334,13 +334,13 @@ engine:[
 
 ed:[
   ['Albion the Branded Dragon','Albion the Branded Dragon',['en','bo'],
-    '<b>Goal:</b> L8 Fusion (2500/2000). On field: fuses from field/GY. <b>GY End Phase: set 1 "Branded" spell/trap from Deck.</b>',
-    'Every turn starts/ends with Albion. Also sent from ED by Fallen of White as cost. <b>Run 2 in ED.</b>',
+    '<b>Goal:</b> L8 Fusion (2500/2000). On field: fuses from field/GY. <b>GY End Phase: set 1 "Branded" spell/trap directly from Deck.</b>',
+    'The backbone of the deck\'s engine. When Albion hits the GY — whether sent from ED as Fallen of White\'s cost, used as Mirrorjade\'s banish cost, or dumped by High Spirits — his End Phase effect sets a free Branded spell/trap from Deck (usually Branded in Red). This means every combo that touches Albion gives you an opponent\'s-turn Fusion play for free. You go through multiple copies per game, which is why you <b>run 2 in ED.</b>',
     {label:'End Phase set targets (and why — priority order)',items:[['Branded in Red','— #1 default. Lets you Fusion Summon during opponent\'s turn using GY materials. This is your main follow-up disruption.'],['Branded Retribution','— set this if you already have Red, or if you expect opponent to combo off (SS3 negate stops their Special Summon effects). Requires returning 2 Fusions from GY to ED.'],['Branded in White','— set if you run it. Normal Spell so your-turn only, but flexible material options.']]}],
 
   ['Lubellion the Searing Dragon','Lubellion the Searing Dragon',['en'],
-    '<b>Goal:</b> L8 Fusion (2500/3000). Discard 1 → Fusion using self + monster in GY/banished. Shuffles Albaz back.',
-    'Bridge to Mirrorjade. The discard is the only real minus.',null],
+    '<b>Goal:</b> L8 Fusion (2500/3000). On summon: discard 1 card → Fusion Summon using Lubellion + 1 monster from GY or banished. Also shuffles 1 "Fallen of Albaz" from GY into Deck.',
+    'The stepping stone between Albion and Mirrorjade in the Branded Fusion line. Branded Fusion makes Albion → Albion on field fuses into Lubellion (using itself + a GY monster) → Lubellion discards 1 and fuses itself + GY material into Mirrorjade. Each step triggers GY effects. The discard is the deck\'s only real minus, but it\'s worth it. Shuffling Albaz back to Deck ensures you never run out of Fusion material. <b>Run 1 in ED.</b>',null],
 
   ['Mirrorjade the Iceblade Dragon','Mirrorjade the Iceblade Dragon',['bo'],
     '<b>Goal:</b> L8 Fusion (3000/2500). Quick Effect: send Fusion from ED to GY → banish 1 opponent\'s monster (non-targeting, non-destruction). If leaves field by opponent: End Phase nuke ALL monsters.',
@@ -353,9 +353,9 @@ ed:[
     {label:'On summon, sends',items:[['Albion the Shrouded Dragon','(#1 — Shrouded then sends Branded Retribution to GY → banish Retribution → recover Branded Fusion)'],['Titaniklad the Ash Dragon','(if you need EP add/summon Cartesia or Quem from Deck)']]}],
 
   ['Ecclesia and the Dark Dragon','Ecclesia and the Dark Dragon',['bo','nw'],
-    '<b>Goal:</b> L8 <b>SYNCHRO</b> (2500/2500). Quick Effect: banish self until End Phase → summon Albaz or L4-or-lower mentioning it from Deck/GY. GY: shuffle self + L8 Fusion in GY + 1 card on field into Deck.',
-    'SYNCHRO, not Fusion. Quick recruit = opponent\'s-turn interaction. GY shuffle = non-targeting non-destruction removal.',
-    {label:'Quick effect recruits',items:[['Blazing Cartesia, the Virtuous','(#1 — she quick-fuses into Mirrorjade during their turn)'],['Guiding Quem, the Virtuous','(dump from Deck + revive engine)'],['Fallen of the White Dragon','(recruits another Ecclesia → more bodies)']]}],
+    '<b>Goal:</b> L8 <b>SYNCHRO</b> (2500/2500). Made with Fallen of White (L4) + Incredible Ecclesia (L4 Tuner). Quick Effect (either turn): banish self until End Phase → Special Summon 1 "Fallen of Albaz" or L4-or-lower monster that mentions it from Deck/GY. GY: shuffle self + 1 L8 Fusion in GY + 1 card on field into Deck.',
+    'This is your <b>delayed Mirrorjade maker</b>. The combo: on opponent\'s turn, Ecclesia Synchro banishes itself → recruits Blazing Cartesia from Deck → Cartesia lands on field and immediately quick-effect fuses into Mirrorjade using herself + a monster you control or in hand. You now have Mirrorjade\'s non-targeting banish live during their turn. At End Phase, Ecclesia Synchro returns to field — ready to do it all again next turn. The GY shuffle effect is a backup: non-targeting, non-destruction removal that puts a problem card back in Deck. <b>Run 1 in ED.</b>',
+    {label:'Quick effect recruits (and when)',items:[['Blazing Cartesia, the Virtuous','— #1 target. Recruit during opponent\'s Main Phase (before they commit resources). Cartesia quick-fuses into Mirrorjade using herself + any LIGHT/DARK you control.'],['Guiding Quem, the Virtuous','— mid/late game. Quem dumps from Deck on summon + revives when cards leave ED. Extends your grind.'],['Fallen of the White Dragon','— if Cartesia is unavailable. FotW recruits another Ecclesia from Deck → gives you bodies to fuse with or Synchro again next turn.']]}],
 
   ['Titaniklad the Ash Dragon','Titaniklad the Ash Dragon',['en'],
     '<b>Goal:</b> L10 Fusion (3500). If sent to GY: End Phase add or summon "Fallen of Albaz" or "Dogmatika" from Deck.',
@@ -384,8 +384,8 @@ ed:[
     'ED monster effect negate + bounce. Materials aren\'t natural in Branded Despia — mainly made via Fallen of Albaz\'s on-field contact fusion using opponent\'s monsters, or Super Poly. GY revival gives recurring value. Run 0-1 in ED.',null],
 
   ['The Dragon that Devours the Dogma','The Dragon that Devours the Dogma',['bo'],
-    '<b>Goal:</b> L8 Fusion (Albaz + 1 LIGHT/DARK + 1 Effect Monster). On summon: shuffle up to 2 cards from any GY(s)/banished into Deck. While Ecclesia is on field/in either GY: gains 500 ATK and <b>unaffected by other card effects</b>. GY End Phase: search Dogmatika or Tri-Brigade.',
-    'Unaffected 3500 beater when Ecclesia is in GY (which she usually is). GY disruption on summon. 3-material requirement but all types are natural in-engine. Run 0-1 in ED.',
+    '<b>Goal:</b> L8 Fusion (Albaz + 1 LIGHT/DARK + 1 Effect Monster). On summon: shuffle up to 2 cards from any GY(s)/banished into Deck. While Ecclesia is on field/in either GY: gains 500 ATK (→ 3500) and <b>unaffected by other card effects</b>. GY End Phase: search 1 "Dogmatika" or "Tri-Brigade" from Deck.',
+    'A 3500 ATK body that\'s <b>unaffected by card effects</b> — as long as Incredible Ecclesia is in the GY or on field (which she usually is after the Synchro play, since FotW sends her to GY as material). The on-summon GY shuffle is non-targeting removal that also disrupts GY-dependent decks. 3-material requirement looks steep but all types are natural in-engine (Albaz + Cartesia + any LIGHT/DARK). Make this off Branded in Red on the opponent\'s turn when you need an unkillable wall instead of Mirrorjade\'s banish. <b>Run 0-1 in ED.</b>',
     {label:'GY End Phase searches',items:[['Incredible Ecclesia, the Virtuous','(if you want a body/Tuner next turn)'],['Tri-Brigade Mercourier','(hand negate for protection)']]}],
 
   ['Khaos Starsource Dragon','Khaos Starsource Dragon',['bo'],
@@ -405,8 +405,8 @@ spells:[
     {label:'Usual fusion targets',items:[['Mirrorjade the Iceblade Dragon','(boss + banish removal)'],['Albion the Branded Dragon','(triggers End Phase set)'],['Albion the Sanctifire Dragon','(untargetable L12 — needs Albaz + LIGHT Spellcaster)'],['Lubellion the Searing Dragon','(stepping stone → Mirrorjade)']]}],
 
   ['Branded in Red','Branded in Red',['gr','sp'],
-    '<b>Goal:</b> Quick-Play Spell. Fusion Summon 1 Level 8+ Fusion from ED, using monsters from hand/field as material, but it can\'t attack directly that turn. Also recovers: target 1 "Despia" or "Fallen of Albaz" in GY → add to hand.',
-    'Set free by Albion End Phase. Quick-Play means it\'s <b>live the turn it\'s set</b> — your main opponent\'s-turn fusion play. <b>Flex slot</b> in some builds. Run 0-1.',
+    '<b>Goal:</b> Quick-Play Spell. Fusion Summon 1 Level 8+ Fusion from ED, using monsters from hand/field as material, but the Fusion can\'t attack directly that turn. Also recovers: target 1 "Despia" or "Fallen of Albaz" in GY → add to hand.',
+    'You don\'t run this in the Main Deck — Albion sets it directly from Deck to your field during End Phase for free. Since it\'s Quick-Play and set during YOUR End Phase, it\'s <b>immediately live on the opponent\'s turn</b>. This is how you make Mirrorjade (or Sanctifire, Devours, etc.) during their turn without needing the Ecclesia Synchro line. Having both Red + Ecclesia Synchro means two independent fusion plays on the opponent\'s turn. Some builds run 0 in Main Deck (relying entirely on Albion\'s set), others run 1 for consistency. <b>Run 0-1 in Main Deck.</b>',
     {label:'Usual fusions off Red (and when)',items:[['Mirrorjade the Iceblade Dragon','— default. Quick-effect banish a monster (non-targeting, non-destruction) during their turn. If they out it, End Phase nuke wipes the board.'],['Albion the Sanctifire Dragon','— untargetable L12 body. If you dumped a floodgate (Kristya/Jowgen), summon it to their field to lock them out.'],['Albion the Branded Dragon','— grind game. Use if you need another Albion cycle (End Phase sets another Branded spell/trap). Also fuses from field/GY on field.'],['Lubellion the Searing Dragon','— stepping stone if you need specific materials shuffled. Discard 1 → fuse using itself + GY/banished monster into Mirrorjade.'],['Secreterion Dragon','— matchup call. If opponent relies on Dragon/Spellcaster effects (mirror match, etc.), floodgate shuts them down.']]}],
 
   ['Branded Retribution','Branded Retribution',['pr','sp'],
@@ -426,8 +426,8 @@ tech:[
     'Paired with Bystial Lubellion. If you play Lubellion, you play Lost. Cut together as a package. Extremely powerful protection but costs 2 deck slots + ED space for Lubellion\'s tribute.',null],
 
   ['The Golden Swordsoul','The Golden Swordsoul',['en'],
-    '<b>Goal:</b> L4 Tuner that Special Summons itself. Synchro material for Ecclesia + Fallen of White → L8.',
-    'Some builds play this to make the Ecclesia Synchro line more consistent. Search with Ecclesia (she searches Swordsoul or Dogmatika). Cut from most 2026 lists but viable if you lean into the Synchro plan.',null],
+    '<b>Goal:</b> L4 Tuner that Special Summons itself from hand (condition-based, can\'t be negated). Searchable by Incredible Ecclesia (she searches "Swordsoul" cards).',
+    'Backup Tuner for the Ecclesia Synchro line. If you opened FotW but Incredible Ecclesia is already in hand/GY, you can search Golden Swordsoul instead, summon it, and still make the L8 Synchro (FotW + Golden Swordsoul). Cut from most 2026 lists because Ecclesia alone is usually enough, but viable if you lean into the Synchro plan or want redundancy. <b>Run 0-1.</b>',null],
 
   ['Despian Comedy','Comedy',['pr'],
     '<b>Goal:</b> HAND: reveal to protect Despia monster from targeting. GY Quick Effect: tribute Fusion → summon Comedy. Dodges removal.',
@@ -506,27 +506,33 @@ function build(){
   Opponent's turn: <b>Branded in Red</b> (Quick-Play fusion into Mirrorjade/Sanctifire), <b>Ecclesia Synchro</b> (banish self → recruit Cartesia → quick-fuse), <b>Mirrorjade</b> (banish a monster), <b>Mercourier</b> (hand negate), <b>Branded Retribution</b> (SS3 negate).</p></div>
 
   <h3>Three Independent Starter Lines</h3>
-  <div class="flow">PLAN A — Branded Fusion (strongest)
-  BF → Albion → Lubellion → Mirrorjade
-  Albion EP → set Branded in Red
-
-PLAN B — Fallen of White Dragon
-  FotW sends Albion from ED (COST) → recruit Ecclesia
+  <div class="cpt cpt-bl"><h4>Sequencing Tip — Lead with FotW</h4>
+  <p>If you have both Fallen of White and Branded Fusion in hand, <b>always activate FotW first</b>. FotW's ED send is a COST (resolves even if negated), so if they Ash your summon you still get Albion in GY AND you still have Branded Fusion as a follow-up. If they let FotW resolve, you set up the Ecclesia Synchro line, then Branded Fusion makes Mirrorjade — giving you the strongest possible board. Branded Fusion is the highest-ceiling card, but FotW is the best <i>lead</i> because it baits interaction safely.</p></div>
+  <div class="flow">STARTER 1 — Fallen of White Dragon (best lead / Ash bait)
+  FotW sends Albion from ED (COST — even if negated) → recruit Ecclesia
   → FotW + Ecclesia → Synchro: Ecclesia and the Dark Dragon
   → Albion EP → set Branded in Red
   Opp turn: Ecclesia banishes self → recruits Cartesia → fuses Mirrorjade
 
-PLAN C — Branded in High Spirits (grind)
+STARTER 2 — Branded Fusion (highest ceiling)
+  BF → Albion → Lubellion → Mirrorjade
+  Albion EP → set Branded in Red
+  (Best when FotW already resolved, or as your only starter)
+
+STARTER 3 — Branded in High Spirits (grind / backup)
   High Spirits → send Albion/Titan from ED (triggers GY)
   → discard → search Cartesia/FotW
   → End Phase: High Spirits + Cartesia return to hand
   Repeatable every turn — never runs out
 
-ALL THREE are independent. If one gets Ashed, pivot to another.</div>
+ALL THREE are independent. If one gets Ashed, pivot to another.
+IDEAL: FotW first (bait Ash) → then Branded Fusion (full combo).</div>
 
   <h3>Key Combos</h3>
   <div class="cpt"><h4>Ecclesia Synchro Line (FotW + Ecclesia)</h4>
-  <p>Fallen of White (L4, treated as Albaz) + Incredible Ecclesia (L4 Tuner) = <b>Ecclesia and the Dark Dragon</b> (L8 Synchro). During opponent's turn, Ecclesia banishes herself from GY → recruits Blazing Cartesia from Deck → Cartesia quick-effect fuses Mirrorjade. This is your primary opponent's-turn Mirrorjade line when you open FotW.</p></div>
+  <p>Fallen of White (L4, treated as Albaz) + Incredible Ecclesia (L4 Tuner) = <b>Ecclesia and the Dark Dragon</b> (L8 Synchro). During opponent's turn, Ecclesia banishes herself → recruits Blazing Cartesia from Deck → Cartesia quick-effect fuses into Mirrorjade using herself + a monster on your field (or hand).</p>
+  <p><b>When to activate:</b> Use the Quick Effect during the <b>opponent's Main Phase</b>, ideally before they commit to their combo. Cartesia appears and immediately fuses — the opponent has to deal with Mirrorjade's non-targeting banish before they set up their board. If you wait too long, they may have negates ready.</p>
+  <p><b>End Phase loop:</b> After banishing herself, Ecclesia Synchro returns to field during the End Phase. This means the recruit play is available <i>every single turn</i> — it's not a one-shot. In grind games, this is your most reliable way to keep making Mirrorjade.</p></div>
 
   <div class="cpt"><h4>Granguignol Recycling Loop</h4>
   <div class="flow">Blazing Cartesia + LIGHT/DARK on field
@@ -598,9 +604,11 @@ ALL THREE are independent. If one gets Ashed, pivot to another.</div>
     <div class="cpt cpt-rd"><h4>CHOKE — Ash on recruit</h4><p>You keep body + Albion in GY. Weakened but alive.</p></div>
     <div class="cs"><div class="sn">3</div><div class="sc">FotW (L4) + Ecclesia (L4 Tuner) → <b>Ecclesia and the Dark Dragon</b> (L8 Synchro).</div></div>
     <div class="cs"><div class="sn">4</div><div class="sc">EP: <b>Albion</b> GY → set <b>Branded in Red</b>.</div></div>
-    <div class="cs"><div class="sn">5</div><div class="sc"><i>Opp turn:</i> <b>Ecclesia</b> banishes self → summons <b>Blazing Cartesia</b> from Deck → Cartesia quick-fuses <b>Mirrorjade</b>.</div></div>
+    <div class="cs"><div class="sn">5</div><div class="sc"><i>Opp turn (their Main Phase):</i> <b>Ecclesia Synchro</b> Quick Effect → banishes self → summons <b>Blazing Cartesia</b> from Deck.</div></div>
+    <div class="cs"><div class="sn">6</div><div class="sc">Cartesia Quick Effect → fuses herself + a monster you control (e.g. Quem if summoned) → <b>Mirrorjade</b>. Use Mirrorjade\'s banish to remove their key monster.</div></div>
+    <div class="cs"><div class="sn">7</div><div class="sc"><i>End Phase:</i> Ecclesia Synchro returns to field. Cartesia returns to hand (a Fusion was sent to GY). Both ready for next turn.</div></div>
   </div>
-  <div class="cpt cpt-gn"><h4>Board</h4><p>Ecclesia Synchro (recruit) + Branded in Red. Opp turn: Mirrorjade appears. Ecclesia returns EP.</p></div></div>
+  <div class="cpt cpt-gn"><h4>Board</h4><p>Ecclesia Synchro (recruit) + Branded in Red set. Opp turn: Mirrorjade appears via Cartesia. End Phase: Ecclesia returns to field, Cartesia returns to hand — the loop repeats every turn.</p></div></div>
 
   <div class="cpnl" id="c3">
   <h3>High Spirits + monster to reveal</h3>
