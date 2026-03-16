@@ -38,9 +38,9 @@ CARDS = [
     "Fallen of Albaz",
     "Guiding Quem, the Virtuous",
     "Incredible Ecclesia, the Virtuous",
-    "The Golden Swordsoul",
     "Tri-Brigade Mercourier",
-    "Bystial Lubellion",
+    "Springans Kitt",
+    "Tri-Brigade Springans Kitt",
     # Extra Deck
     "Albion the Branded Dragon",
     "Lubellion the Searing Dragon",
@@ -56,10 +56,17 @@ CARDS = [
     "The Dragon that Devours the Dogma",
     "Khaos Starsource Dragon",
     # Spells/Traps
-    "Branded Lost",
+    "Gold Sarcophagus",
     "Branded in White",
     "Branded in Red",
     "Branded Retribution",
+    # Tech choices
+    "Bystial Lubellion",
+    "Branded Lost",
+    "The Golden Swordsoul",
+    "Comedy",
+    "Guardian Chimera",
+    "Mulcharmy Fuwalos",
     # Matchup - Sky Striker
     "Sky Striker Mobilize - Engage!",
     "Sky Striker Ace - Raye",

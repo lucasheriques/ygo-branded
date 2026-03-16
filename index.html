@@ -260,7 +260,7 @@ const C={
 core:[
   ['Branded Fusion','Branded Fusion',['st','sp'],
     '<b>Goal:</b> Normal Spell. Fusion Summon sending materials from <b>Deck</b>. You lose nothing from hand — the cornerstone of every Branded combo.',
-    'Restriction: only Fusions from ED rest of turn. #1 Ash Blossom target.',
+    'Restriction: only Fusions from ED rest of turn. #1 Ash Blossom target. Run 2 (not 3 — searchable by Aluber, Kitt, Retribution GY effect).',
     null],
 
   ['Fallen of the White Dragon','Fallen of the White Dragon',['st','nw'],
@@ -284,18 +284,19 @@ core:[
     {label:'Usual ED sends (and why)',items:[['Albion the Branded Dragon','— default. Triggers End Phase set (free Branded in Red). Best value.'],['Titaniklad the Ash Dragon','— if you need a body next turn. Titan searches/summons Cartesia or Quem.']],
      label2:'Usual searches (and why)',items2:[['Blazing Cartesia, the Virtuous','— #1 target. Self-summons, quick-effect fuses, and returns to hand every EP. Best all-rounder.'],['Fallen of the White Dragon','— if you don\'t have a second starter yet. Opens the Ecclesia Synchro line.'],['Albion the Shrouded Dragon','— if you need him as an Albaz name on field or want his GY send effect later.']]}],
 
-  ['The Fallen & The Virtuous','The Fallen & The Virtuous',['nw','en'],
-    '<b>Goal:</b> Counts as both "Albaz" and "Ecclesia" name. Bridges both halves of the engine.',
-    'Searchable by either side. Run 2-3.',null],
+  ['The Fallen & The Virtuous','The Fallen & The Virtuous',['nw','sp','st'],
+    '<b>Goal:</b> Quick-Play Spell (always treated as "Branded" + "Dogmatika"). Choose 1: (A) Send Albaz Fusion from ED to GY → target 1 face-up card → destroy it. (B) If Ecclesia in field/GY: target 1 monster in either GY → Special Summon to your field.',
+    'Two-in-one: removal + revival. Effect (A) sends Albion/Titaniklad from ED → triggers their GY effects AND destroys a card. Effect (B) revives anything from either GY. Run 3.',
+    {label:'Usual ED sends for effect (A)',items:[['Albion the Branded Dragon','— default. GY End Phase sets Branded in Red or Retribution from Deck. Best value send.'],['Titaniklad the Ash Dragon','— if you need a body. End Phase adds/summons Cartesia or Quem from Deck.'],['Granguignol the Dusk Dragon','— can trigger if opponent summons later (banish → summon Dogmatika from Deck).']]}],
 
   ['Aluber the Jester of Despia','Aluber the Jester of Despia',['st'],
     '<b>Goal:</b> On Normal/Special Summon: search 1 "Branded" spell/trap or "Polymerization" from Deck. DARK Fairy L4.',
     'Searches Branded Fusion on summon — the best card in the deck. Also searched by Branded Opening. Run 1-2.',
-    {label:'Usual searches (and why)',items:[['Branded Fusion','— #1 always. Normal Spell that Fusion Summons from Deck.'],['Branded in Red','— if you already have BF or it\'s mid-game and need opp-turn fusion access.'],['Branded Lost','— niche. If you expect negation-heavy opponent and want to hard-activate it.']]}],
+    {label:'Usual searches (and why)',items:[['Branded Fusion','— #1 always. Normal Spell that Fusion Summons from Deck.'],['Branded in Red','— if you already have BF or it\'s mid-game and need opp-turn fusion access.'],['Branded in White','— alternative fusion spell if you need the GY banish flexibility.']]}],
 
   ['Branded Opening','Branded Opening',['ex','sp'],
     '<b>Goal:</b> Quick-Play Spell. Discard 1 → add 1 "Despia" monster from Deck to hand OR Special Summon 1 "Despia" from GY. GY: banish to protect a Fusion from destruction.',
-    'Searches Aluber (who then searches Branded Fusion). The GY protection effect is relevant too — banish Opening from GY to save Mirrorjade from destruction. Run 0-1.',
+    'Searches Aluber (who then searches Branded Fusion — a two-card chain). The GY protection effect is relevant too — banish Opening from GY to save Mirrorjade from destruction. <b>Run 3.</b>',
     {label:'Usual targets',items:[['Aluber the Jester of Despia','— #1. Aluber on summon searches Branded Fusion or another Branded spell/trap. Two-card chain.']]}],
 ],
 
@@ -312,29 +313,30 @@ engine:[
   ['Incredible Ecclesia, the Virtuous','Incredible Ecclesia, the Virtuous',['en','nw'],
     '<b>Goal:</b> L4 Tuner. Recruited by Fallen of White. On summon: search "Swordsoul" or "Dogmatika" card. Self-summons if opponent has more monsters.',
     'Bridge to L8 Synchro. Run 1.',
-    {label:'Usual searches (and why)',items:[['The Golden Swordsoul','— default. L4 Tuner that self-summons → instant L8 Synchro with Fallen of White.'],['Guiding Quem, the Virtuous','— alternative (treated as Dogmatika). Better if you want the dump + revive engine instead of Synchro.']]}],
-
-  ['The Golden Swordsoul','The Golden Swordsoul',['en','nw'],
-    '<b>Goal:</b> L4 Tuner that Special Summons itself. Synchro material for Ecclesia.',
-    'Run 1. Never want to draw — search with Ecclesia.',null],
+    {label:'Usual searches (and why)',items:[['Guiding Quem, the Virtuous','— default (treated as Dogmatika). Dump + revive engine on summon.'],['The Fallen & The Virtuous','— if you need the Albaz + Ecclesia name bridge.']]}],
 
   ['Tri-Brigade Mercourier','Tri-Brigade Mercourier',['pr','en'],
     '<b>Goal:</b> (1) Send from <b>HAND or FIELD</b> to GY → negate a monster effect while you control an Albaz Fusion. (2) If <b>banished</b>: add Albaz-mentioning monster from Deck.',
     'Negate is from HAND/FIELD, not GY! Search triggers when banished as material. Run 1-2.',
     {label:'When banished, usually searches (and why)',items:[['Blazing Cartesia, the Virtuous','— default. Self-summons, quick-fuses, returns to hand. Best all-purpose target.'],['Fallen of the White Dragon','— if you need a starter for the Ecclesia line next turn.']]}],
 
-  ['Bystial Lubellion','Bystial Lubellion',['en'],
-    '<b>Goal:</b> Tribute 1 LIGHT/DARK → summon from hand/GY. Then activate "Branded" Continuous Spell/Trap from Deck.',
-    'Gets Branded Lost online. Tribute Albion as free cost. Run 1.',
-    {label:'Activates from Deck (and why)',items:[['Branded Lost','— always this. Makes ALL your Fusions un-negatable and un-respondable. Once live, opponent can\'t interact with your fusion plays. There is no other choice — Branded Lost is the only target.']]}],
+  ['Springans Kitt','Springans Kitt',['en'],
+    '<b>Goal:</b> Self-summons from hand if you have an Albaz Fusion on field/GY. On Normal/Special Summon: search 1 "Branded" spell/trap from Deck/GY/banished, then put 1 card from hand on bottom of Deck.',
+    'Mid-game Branded spell/trap searcher — like a second Aluber but needs a Fusion out first. Searches Branded Fusion, Red, White, Retribution, anything. The bottom-deck is a cost, not a downside. Run 1.',
+    {label:'Usual searches (and why)',items:[['Branded Fusion','— #1 if you don\'t have it yet. Your best card.'],['Branded in Red','— if you need opp-turn fusion access.'],['Branded Retribution','— if you need SS3 negate.'],['Branded Opening','— if you need to chain into Aluber search.']]}],
+
+  ['Tri-Brigade Springans Kitt','Tri-Brigade Springans Kitt',['en','nw'],
+    '<b>Goal:</b> L4 LIGHT Beast. Self-summons from hand if you control a Tri-Brigade or Springans monster. When sent to GY: Special Summon 1 Tri-Brigade, Springans, or Albaz-mentioning monster from GY.',
+    'Free body that replaces itself. Use as Fusion material → revives Cartesia, Mercourier, or Springans Kitt from GY. Self-summons if you control Mercourier or Springans Kitt. Run 1.',
+    {label:'On GY send, usually revives',items:[['Blazing Cartesia, the Virtuous','— best target. Gets Cartesia back for another quick-fusion.'],['Springans Kitt','— revive Kitt for another Branded spell/trap search.'],['Tri-Brigade Mercourier','— if you need the negate body back on field.']]}],
 
 ],
 
 ed:[
   ['Albion the Branded Dragon','Albion the Branded Dragon',['en','bo'],
     '<b>Goal:</b> L8 Fusion (2500/2000). On field: fuses from field/GY. <b>GY End Phase: set 1 "Branded" spell/trap from Deck.</b>',
-    'Every turn starts/ends with Albion. Also sent from ED by Fallen of White as cost.',
-    {label:'End Phase set targets (and why — priority order)',items:[['Branded in Red','— #1 default. Lets you Fusion Summon during opponent\'s turn using GY materials. This is your main follow-up disruption.'],['Branded Retribution','— set this if you already have Red, or if you expect opponent to combo off (SS3 negate stops their Special Summon effects). Requires returning 2 Fusions from GY to ED.'],['Branded in White','— set if you run it. Quick-Play fusion spell usable on either turn. Alternative to Red.']]}],
+    'Every turn starts/ends with Albion. Also sent from ED by Fallen of White as cost. <b>Run 2 in ED.</b>',
+    {label:'End Phase set targets (and why — priority order)',items:[['Branded in Red','— #1 default. Lets you Fusion Summon during opponent\'s turn using GY materials. This is your main follow-up disruption.'],['Branded Retribution','— set this if you already have Red, or if you expect opponent to combo off (SS3 negate stops their Special Summon effects). Requires returning 2 Fusions from GY to ED.'],['Branded in White','— set if you run it. Normal Spell so your-turn only, but flexible material options.']]}],
 
   ['Lubellion the Searing Dragon','Lubellion the Searing Dragon',['en'],
     '<b>Goal:</b> L8 Fusion (2500/3000). Discard 1 → Fusion using self + monster in GY/banished. Shuffles Albaz back.',
@@ -347,8 +349,8 @@ ed:[
 
   ['Granguignol the Dusk Dragon','Granguignol the Dusk Dragon',['en'],
     '<b>Goal:</b> L8 Fusion. On Fusion Summon: send L6+ LIGHT/DARK from Deck or ED to GY. If opponent summons by monster effect: banish from field/GY → summon Dogmatika from Deck or Despia from ED.',
-    'Key recycling piece. Made by Blazing Cartesia.',
-    {label:'On summon, sends',items:[['Albion the Shrouded Dragon','(#1 — Shrouded then sends Branded Retribution to GY → banish Retribution → recover Branded Fusion)'],['Bystial Lubellion','(if you need DARK in GY)']]}],
+    'Key recycling piece. Made by Blazing Cartesia. <b>Run 2 in ED</b> — you go through them fast.',
+    {label:'On summon, sends',items:[['Albion the Shrouded Dragon','(#1 — Shrouded then sends Branded Retribution to GY → banish Retribution → recover Branded Fusion)'],['Titaniklad the Ash Dragon','(if you need EP add/summon Cartesia or Quem from Deck)']]}],
 
   ['Ecclesia and the Dark Dragon','Ecclesia and the Dark Dragon',['bo','nw'],
     '<b>Goal:</b> L8 <b>SYNCHRO</b> (2500/2500). Quick Effect: banish self until End Phase → summon Albaz or L4-or-lower mentioning it from Deck/GY. GY: shuffle self + L8 Fusion in GY + 1 card on field into Deck.',
@@ -392,9 +394,10 @@ ed:[
 ],
 
 spells:[
-  ['Branded Lost','Branded Lost',['pr','sp'],
-    '<b>Goal:</b> Continuous Spell. Fusions can\'t be negated. Neither player can respond to Fusion Summon effects.',
-    'Blanks Ash/Veiler/Imperm. Activated from Deck by Bystial Lubellion. Run 1.',null],
+  ['Gold Sarcophagus','Gold Sarcophagus',['en','sp'],
+    '<b>Goal:</b> Normal Spell. Banish 1 card from Deck face-up. (Add it to hand during 2nd Standby Phase.)',
+    'Banish <b>Tri-Brigade Mercourier</b> from Deck → immediately triggers his "if banished" search (Cartesia, FotW, etc.). Instant +1 that\'s also Ash bait. Run 1.',
+    {label:'Usual banish targets (and why)',items:[['Tri-Brigade Mercourier','— #1 always. Triggers Mercourier\'s banish search for any Albaz-mentioning monster. You get the search NOW, and Mercourier comes to hand 2 turns later as a bonus.']]}],
 
   ['Branded in White','Branded in White',['gr','sp'],
     '<b>Goal:</b> Normal Spell. Fusion Summon using monsters from hand/field, must include 1 Dragon. If you use "Fallen of Albaz" as material, can also banish from GY. GY: if sent there by Albaz\'s effect this turn, set this card during End Phase.',
@@ -410,6 +413,33 @@ spells:[
     '<b>Goal:</b> Counter Trap (Spell Speed 3). Negate + destroy a Special Summon effect by returning Fusions to ED. GY: banish → add Branded spell/trap from GY.',
     'In-engine SS3 negate. GY effect recycles Branded Fusion. Run 0-1.',
     {label:'GY effect recovers',items:[['Branded Fusion','(#1 — get your best card back for next turn)'],['Branded in Red','(if BF already in hand)'],['Branded in White','(if you run it and need fusion access)']]}],
+],
+
+tech:[
+  ['Bystial Lubellion','Bystial Lubellion',['en'],
+    '<b>Goal:</b> Tribute 1 LIGHT/DARK → summon from hand/GY. Then activate "Branded" Continuous Spell/Trap from Deck (Branded Lost).',
+    'Gets Branded Lost online, making all Fusions un-negatable. Some builds cut both Lubellion + Lost for deck space, since BPRO starters are strong enough without the protection. Consider if your locals is heavy on Ash/Veiler/Imperm.',
+    {label:'Activates from Deck',items:[['Branded Lost','— Continuous Spell. Fusions can\'t be negated. Neither player responds to Fusion Summon effects. Blanks Ash/Veiler/Imperm.']]}],
+
+  ['Branded Lost','Branded Lost',['pr','sp'],
+    '<b>Goal:</b> Continuous Spell. Fusions can\'t be negated. Neither player can respond to Fusion Summon effects.',
+    'Paired with Bystial Lubellion. If you play Lubellion, you play Lost. Cut together as a package. Extremely powerful protection but costs 2 deck slots + ED space for Lubellion\'s tribute.',null],
+
+  ['The Golden Swordsoul','The Golden Swordsoul',['en'],
+    '<b>Goal:</b> L4 Tuner that Special Summons itself. Synchro material for Ecclesia + Fallen of White → L8.',
+    'Some builds play this to make the Ecclesia Synchro line more consistent. Search with Ecclesia (she searches Swordsoul or Dogmatika). Cut from most 2026 lists but viable if you lean into the Synchro plan.',null],
+
+  ['Despian Comedy','Comedy',['pr'],
+    '<b>Goal:</b> HAND: reveal to protect Despia monster from targeting. GY Quick Effect: tribute Fusion → summon Comedy. Dodges removal.',
+    'Tributing Mirrorjade triggers his End Phase nuke. Cut from most 2026 lists — the Despia package is trimmed to just Aluber. Consider if you want another way to trigger Mirrorjade\'s nuke.',null],
+
+  ['Guardian Chimera','Guardian Chimera',['bo'],
+    '<b>Goal:</b> L10 Fusion. 3 monsters (1+ hand, 1+ field). On summon: draw = hand materials, destroy = field materials.',
+    'Going-second board breaker. Cut from most 2026 ED lists (15 slots are tight) but powerful if your locals has lots of go-first decks.',null],
+
+  ['Mulcharmy Fuwalos','Mulcharmy Fuwalos',['pr'],
+    '<b>Goal:</b> Hand trap. Discard if you control no cards → draw 1 each time opponent Special Summons from Deck/ED this turn. End Phase: hand size caps at opponent\'s cards +6.',
+    'The premier going-second hand trap in 2026. If opponent combos, you draw 5-10+ cards. All 3 sample lists run 3 copies main deck. Essentially mandatory at 3.',null],
 ]
 };
 
@@ -465,15 +495,15 @@ function build(){
   <p>Albion (Fusion #1) → Lubellion (#2) → Mirrorjade (boss). Each going to GY triggers more. One spell cascades into a full board.</p></div>
 
   <div class="cpt cpt-or"><h4>Step 4 — You play on BOTH turns</h4>
-  <p>Your turn: Mirrorjade + Branded Lost.<br>
-  Opponent's turn: Branded in Red (GY fusion), Ecclesia Synchro (quick recruit → Cartesia → fusion), Mirrorjade (banish), Mercourier (negate from hand/field), Branded Retribution (Spell Speed 3 negate).</p></div>
+  <p>Your turn: Mirrorjade + Branded in Red set.<br>
+  Opponent's turn: Branded in Red (Quick-Play fusion), Ecclesia Synchro (quick recruit → Cartesia → fusion), Mirrorjade (banish), Mercourier (negate from hand/field), Branded Retribution (Spell Speed 3 negate).</p></div>
 
   <h3>Three Independent Lines</h3>
   <div class="flow">PLAN A — Branded Fusion
   BF → Albion → Lubellion → Mirrorjade
-  + Bystial Lub → Branded Lost  +  Albion EP → set Branded in Red
+  Albion EP → set Branded in Red (opp-turn fusion)
 
-PLAN B — Fallen of White Dragon (NEW)
+PLAN B — Fallen of White Dragon
   FotW (send Albion from ED as cost) → recruit Ecclesia
   → Synchro Ecclesia and the Dark Dragon
   Opp turn: Ecclesia recruits Cartesia → fuses Mirrorjade
@@ -505,6 +535,7 @@ ALL THREE are independent. If one gets Ashed, pivot to another.</div>
   addGroup('Engine & Support','These do their work when sent to GY or banished.',C.engine,cSec);
   addGroup('Extra Deck (Fusion & Synchro)','Note: Ecclesia and the Dark Dragon is a SYNCHRO.',C.ed,cSec);
   addGroup('Spells & Traps','Most set/searched from Deck — rarely hard-drawn.',C.spells,cSec);
+  addGroup('Tech Choices','Meta-dependent flex slots. Not in every list — depends on locals and preference.',C.tech,cSec);
   R.appendChild(cSec);
 
   // COMBOS
@@ -527,19 +558,18 @@ ALL THREE are independent. If one gets Ashed, pivot to another.</div>
     <div class="cs"><div class="sn">2</div><div class="sc"><b>Albion</b> fuses field/GY → <b>Lubellion</b>. Banish Mercourier → search.</div></div>
     <div class="cs"><div class="sn">3</div><div class="sc"><b>Lubellion</b> (discard 1) → shuffle Albaz + Lubellion → <b>Mirrorjade</b>.</div></div>
     <div class="cpt cpt-rd"><h4>CHOKE — Imperm/Veiler on Lubellion</h4><p>Stops Mirrorjade. Albion still in GY.</p></div>
-    <div class="cs"><div class="sn">4</div><div class="sc"><b>Bystial Lubellion</b> (tribute Albion) → <b>Branded Lost</b> from Deck.</div></div>
-    <div class="cs"><div class="sn">5</div><div class="sc">End Phase: <b>Albion</b> GY → set <b>Branded in Red</b> from Deck.</div></div>
+    <div class="cs"><div class="sn">4</div><div class="sc">End Phase: <b>Albion</b> GY → set <b>Branded in Red</b> from Deck.</div></div>
   </div>
-  <div class="cpt cpt-gn"><h4>Board</h4><p>Mirrorjade + Bystial Lub + Branded Lost + Branded in Red set.</p></div></div>
+  <div class="cpt cpt-gn"><h4>Board</h4><p>Mirrorjade + Branded in Red set. Opp turn: Red fuses into another boss or Sanctifire lock.</p></div></div>
 
   <div class="cpnl" id="c2">
   <h3>Fallen of White in hand</h3>
   <div class="cf">
     <div class="cs"><div class="sn">1</div><div class="sc"><b>Fallen of White</b> sends <b>Albion</b> from ED to GY (COST) → summon self.<div class="nt">Lock: L8 Fusion/Synchro. Albion in GY = EP trigger.</div></div></div>
     <div class="cpt cpt-gn"><h4>COST — Can't be negated</h4><p>Even if they negate summon, Albion already in GY.</p></div>
-    <div class="cs"><div class="sn">2</div><div class="sc">Recruit <b>Incredible Ecclesia</b> → she searches <b>Golden Swordsoul</b> (or <b>Guiding Quem</b>).</div></div>
+    <div class="cs"><div class="sn">2</div><div class="sc">Recruit <b>Incredible Ecclesia</b> → she searches <b>Guiding Quem</b> (or another Dogmatika name).</div></div>
     <div class="cpt cpt-rd"><h4>CHOKE — Ash on recruit</h4><p>You keep body + Albion in GY. Weakened but alive.</p></div>
-    <div class="cs"><div class="sn">3</div><div class="sc">FotW (L4) + Ecclesia/Golden (L4 Tuner) → <b>Ecclesia and the Dark Dragon</b> (L8 Synchro).</div></div>
+    <div class="cs"><div class="sn">3</div><div class="sc">FotW (L4) + Ecclesia (L4 Tuner) → <b>Ecclesia and the Dark Dragon</b> (L8 Synchro).</div></div>
     <div class="cs"><div class="sn">4</div><div class="sc">EP: <b>Albion</b> GY → set <b>Branded in Red</b>.</div></div>
     <div class="cs"><div class="sn">5</div><div class="sc"><i>Opp turn:</i> <b>Ecclesia</b> banishes self → summons <b>Blazing Cartesia</b> from Deck → Cartesia quick-fuses <b>Mirrorjade</b>.</div></div>
   </div>
@@ -560,10 +590,9 @@ ALL THREE are independent. If one gets Ashed, pivot to another.</div>
   <div class="cf">
     <div class="cs"><div class="sn">1</div><div class="sc"><b>FotW</b> line → <b>Ecclesia Synchro</b>. Lock allows L8 Fusions.</div></div>
     <div class="cs"><div class="sn">2</div><div class="sc"><b>Branded Fusion</b> → standard → <b>Mirrorjade</b>.</div></div>
-    <div class="cs"><div class="sn">3</div><div class="sc"><b>Bystial Lub</b> → <b>Branded Lost</b>.</div></div>
-    <div class="cs"><div class="sn">4</div><div class="sc">EP: Albion(s) set Branded in Red.</div></div>
+    <div class="cs"><div class="sn">3</div><div class="sc">EP: Albion(s) set Branded in Red.</div></div>
   </div>
-  <div class="cpt cpt-gn"><h4>Board</h4><p>Mirrorjade + Ecclesia + Branded Lost + Branded in Red. 4+ opp-turn interactions.</p></div></div>
+  <div class="cpt cpt-gn"><h4>Board</h4><p>Mirrorjade + Ecclesia Synchro + Branded in Red set. 4+ opp-turn interactions (Red fusion, Ecclesia recruit, Mirrorjade banish, Mercourier negate).</p></div></div>
 
   <div class="cpnl" id="c5">
   <h3>Blazing Cartesia + LIGHT/DARK</h3>
@@ -584,19 +613,19 @@ ALL THREE are independent. If one gets Ashed, pivot to another.</div>
   <p><b>#1: Branded Fusion</b> — collapses standard line (but they can pivot to FotW).<br>
   <b>#2: Fallen of White's recruit</b> — weaker, body + ED trigger remain.<br>
   <b>#3: High Spirits</b> (Quick-Play timing).<br>
-  <span style="color:var(--mu);font-size:.88em">If Branded Lost is active, Ash can't stop Fusions.</span></p></div>
+  </p></div>
   <div class="mu-e" style="border-color:var(--or)"><h4>Impermanence / Veiler</h4>
-  <p><b>Lubellion</b> — stops Mirrorjade. Cartesia dodges by chaining fusion.<br>
-  <b>Bystial Lubellion</b> — stops Branded Lost.</p></div>
+  <p><b>Lubellion the Searing Dragon</b> — stops Mirrorjade. Cartesia dodges by chaining fusion.<br>
+  <b>Springans Kitt</b> — stops Branded spell/trap search. But on-summon, so harder to time.</p></div>
   <div class="mu-e" style="border-color:var(--bl)"><h4>Dimension Shifter</h4>
   <p><b>Devastating.</b> Breaks entire GY resource loop.</p></div>
-  <div class="mu-e" style="border-color:var(--gn)"><h4>Ghost Ogre</h4><p><b>Branded Lost</b> or <b>Branded in Red</b> on activation.</p></div>
+  <div class="mu-e" style="border-color:var(--gn)"><h4>Ghost Ogre</h4><p><b>Branded in Red</b> on activation (Quick-Play, so they chain it).</p></div>
   <div class="mu-e" style="border-color:var(--pk)"><h4>Dominus Impulse</h4><p>Hardest single card for Branded in the 2026 meta.</p></div>
   </div>
   <div class="pnl"><h2>Playing AS Branded — Protection</h2>
   <div class="mu-e" style="border-color:var(--gn)"><h4>Three Independent Starters</h4><p>BF Ashed? → FotW. Both stopped? → High Spirits loop. Always have a pivot.</p></div>
   <div class="mu-e" style="border-color:var(--gn)"><h4>Mercourier</h4><p>Send from <b>HAND or FIELD</b> → negate monster effect targeting your Fusion. Keep one in hand.</p></div>
-  <div class="mu-e" style="border-color:var(--gn)"><h4>Branded Lost</h4><p>Fusions can't be negated or responded to. Get online via Bystial Lub.</p></div>
+  <div class="mu-e" style="border-color:var(--gn)"><h4>Branded Opening (GY)</h4><p>Banish from GY to protect a Fusion from destruction by card effect. Free protection if Opening is already spent.</p></div>
   <div class="mu-e" style="border-color:var(--gn)"><h4>Branded Retribution</h4><p>Spell Speed 3 negate. Can't be chained to by normal effects.</p></div>
   </div>
   <div class="pnl"><h2>Floodgates</h2>
