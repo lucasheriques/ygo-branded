@@ -96,15 +96,15 @@ body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'H
 /* Modal */
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;justify-content:center;align-items:flex-start;padding:40px 16px;overflow-y:auto}
 .modal.show{display:flex}
-.modal-c{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:24px;max-width:580px;width:100%;position:relative}
-.modal-x{position:absolute;top:8px;right:12px;background:none;border:none;color:var(--mu);font-size:1.4em;cursor:pointer;padding:4px 8px}
-.modal-top{display:flex;gap:16px;margin-bottom:14px;align-items:flex-start}
-.modal-img{width:140px;border-radius:8px;flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,.5)}
-.modal-info{flex:1;min-width:0}
-.modal-name{font-size:1.15em;font-weight:700;color:var(--gd)}
-.modal-type{font-size:.88em;color:var(--mu);margin-bottom:6px}
-.modal-stats{font-size:.9em;color:var(--ac2);margin-bottom:4px}
-.modal-desc{font-size:.92em;line-height:1.7}
+.modal-c{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:28px;max-width:750px;width:100%;position:relative}
+.modal-x{position:absolute;top:8px;right:12px;background:none;border:none;color:var(--mu);font-size:1.6em;cursor:pointer;padding:4px 8px;z-index:1}
+.modal-top{display:flex;gap:24px;margin-bottom:16px;align-items:flex-start}
+.modal-img{width:260px;border-radius:8px;flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+.modal-info{flex:1;min-width:0;padding-top:4px}
+.modal-name{font-size:1.25em;font-weight:700;color:var(--gd);margin-bottom:4px}
+.modal-type{font-size:.92em;color:var(--mu);margin-bottom:8px}
+.modal-stats{font-size:.92em;color:var(--ac2);margin-bottom:6px}
+.modal-desc{font-size:.94em;line-height:1.75}
 
 /* Mobile */
 @media(max-width:600px){
@@ -118,8 +118,8 @@ body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'H
   .ce-why{font-size:.85em}
   .targets{font-size:.82em;padding:8px 10px}
   .modal-top{flex-direction:column;align-items:center;text-align:center}
-  .modal-img{width:160px}
-  .modal-c{padding:18px}
+  .modal-img{width:220px}
+  .modal-c{padding:18px;max-width:95vw}
   .modal-desc{font-size:.9em}
   .flow{font-size:.75em;padding:12px}
   .cf{padding:12px}
@@ -403,12 +403,12 @@ function mkCard(el,c){
     if(tgt.label2)tgtHtml+=mkTargets(tgt.label2,tgt.items2);
   }
 
-  d.innerHTML=`<div class="ce-img" id="${iid}"><div class="ph">${display}</div></div>
+  d.innerHTML=`<div class="ce-img"><div class="ph">${display}</div></div>
     <div class="ce-body"><div class="ce-tags">${mkT(tags)}</div><div class="ce-name">${display}</div>
     <div class="ce-goal">${goal}</div><div class="ce-why">${why}</div>${tgtHtml}</div>`;
   el.appendChild(d);
-  // Load image: local first → API fallback
-  const imgContainer=document.getElementById(iid);
+  // Load image: local first → API fallback (use querySelector, not getElementById — element may not be in DOM yet)
+  const imgContainer=d.querySelector('.ce-img');
   if(imgContainer){const img=document.createElement('img');img.loading='lazy';img.alt=display;loadCardImg(img,api);imgContainer.innerHTML='';imgContainer.appendChild(img)}
 }
 
