@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Pure Branded — 2026 Regional Guide</title>
+<style>
+:root{--bg:#0a0e14;--s1:#131920;--s2:#1a2230;--s3:#222d3d;--bd:#2a3545;--tx:#e2e8f0;--mu:#7a8ba0;--ac:#8b5cf6;--ac2:#a78bfa;--gd:#f0b429;--rd:#ef4444;--gn:#22c55e;--bl:#3b82f6;--or:#f59e0b;--cy:#06b6d4;--pk:#ec4899;--tl:#2dd4bf}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;-webkit-text-size-adjust:100%}
+.app{max-width:1100px;margin:0 auto;padding:12px}
+
+/* Header */
+.hdr{text-align:center;padding:24px 12px 18px;border-bottom:1px solid var(--bd);margin-bottom:16px}
+.hdr h1{font-size:1.7em;background:linear-gradient(135deg,var(--ac),var(--gd));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hdr p{color:var(--mu);margin-top:4px;font-size:.9em}
+.hdr .cd{margin-top:8px;padding:5px 14px;background:var(--s1);border:1px solid var(--ac);border-radius:8px;display:inline-block;color:var(--ac2);font-size:.82em}
+.cst{text-align:center;font-size:.7em;color:var(--mu);margin-bottom:8px}.cst span{color:var(--gn)}
+
+/* Nav — horizontal scroll on mobile */
+.nav{display:flex;gap:5px;margin-bottom:18px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:100;border-bottom:1px solid var(--bd);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav button{padding:8px 13px;background:var(--s1);color:var(--mu);border:1px solid var(--bd);border-radius:7px;cursor:pointer;font-size:.78em;transition:all .15s;white-space:nowrap;flex-shrink:0}
+.nav button:hover{border-color:var(--ac);color:var(--tx)}
+.nav button.act{background:var(--ac);color:#fff;border-color:var(--ac)}
+.sec{display:none}.sec.act{display:block}
+
+/* Panel */
+.pnl{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:18px;margin-bottom:16px}
+.pnl h2{font-size:1.2em;color:var(--ac2);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.pnl h3{font-size:.98em;color:var(--gd);margin:14px 0 6px}
+
+/* Card entry — responsive */
+.ce{display:flex;gap:12px;background:var(--s2);border-radius:10px;padding:14px;margin-bottom:10px;align-items:flex-start;cursor:pointer;transition:background .15s}
+.ce:hover{background:var(--s3)}
+.ce-img{width:90px;min-height:130px;border-radius:5px;flex-shrink:0;background:var(--s3);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ce-img img{width:100%;border-radius:5px}
+.ce-img .ph{color:var(--mu);font-size:.55em;text-align:center;padding:4px}
+.ce-body{flex:1;min-width:0}
+.ce-name{font-size:.95em;font-weight:700;color:var(--gd);margin-bottom:2px}
+.ce-tags{margin-bottom:3px}
+.ce-goal{font-size:.84em;margin-bottom:4px}.ce-goal b{color:var(--cy)}
+.ce-why{font-size:.82em;color:var(--mu);margin-bottom:3px}
+
+/* Target box — shows what to search/set */
+.targets{background:var(--s3);border-radius:6px;padding:8px 10px;margin-top:6px;font-size:.78em;border-left:2px solid var(--or)}
+.targets b{color:var(--or)}
+.targets .t-item{display:inline-block;background:var(--s2);border:1px solid var(--bd);border-radius:4px;padding:1px 7px;margin:2px 2px;font-size:.92em;color:var(--gd);cursor:pointer}
+.targets .t-item:hover{border-color:var(--gd)}
+
+/* Tags */
+.tg{display:inline-block;font-size:.62em;padding:1px 6px;border-radius:8px;font-weight:600;margin-right:2px}
+.tg-st{background:rgba(34,197,94,.12);color:var(--gn)}.tg-bo{background:rgba(239,68,68,.12);color:var(--rd)}
+.tg-en{background:rgba(139,92,246,.12);color:var(--ac2)}.tg-pr{background:rgba(6,182,212,.12);color:var(--cy)}
+.tg-ex{background:rgba(245,158,11,.12);color:var(--or)}.tg-nw{background:rgba(236,72,153,.12);color:var(--pk)}
+.tg-sp{background:rgba(45,212,191,.12);color:var(--tl)}.tg-gr{background:rgba(59,130,246,.12);color:var(--bl)}
+
+/* Concept boxes */
+.cpt{background:var(--s2);border-left:3px solid var(--ac);border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0;font-size:.88em}
+.cpt h4{color:var(--ac2);font-size:.9em;margin-bottom:4px}.cpt p{font-size:.92em}
+.cpt-gn{border-color:var(--gn)}.cpt-gn h4{color:var(--gn)}
+.cpt-rd{border-color:var(--rd)}.cpt-rd h4{color:var(--rd)}
+.cpt-bl{border-color:var(--bl)}.cpt-bl h4{color:var(--bl)}
+.cpt-or{border-color:var(--or)}.cpt-or h4{color:var(--or)}
+
+/* Flow */
+.flow{background:var(--s2);border-radius:8px;padding:12px;margin:10px 0;font-family:'Courier New',monospace;font-size:.72em;color:var(--gn);white-space:pre-wrap;line-height:1.7;overflow-x:auto}
+
+/* Combo steps */
+.cs{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}.cs:last-child{border-bottom:none}
+.sn{min-width:26px;height:26px;border-radius:50%;background:var(--ac);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75em;flex-shrink:0}
+.sc{flex:1;font-size:.88em}.sc b{color:var(--gd)}.sc .nt{font-size:.88em;color:var(--mu);margin-top:2px}
+.cf{background:var(--s2);border-radius:8px;padding:14px;margin:8px 0}
+
+/* Matchup */
+.mu-e{background:var(--s2);border-radius:10px;padding:14px;margin-bottom:12px;border-left:4px solid var(--ac)}
+.mu-e h4{font-size:.98em;margin-bottom:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.badge{font-size:.65em;padding:2px 8px;border-radius:10px;font-weight:700}
+.b-fav{background:rgba(34,197,94,.12);color:var(--gn)}.b-ev{background:rgba(245,158,11,.12);color:var(--or)}.b-un{background:rgba(239,68,68,.12);color:var(--rd)}
+.mu-ht{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.82em}.mu-ht strong{color:var(--rd)}
+
+/* Combo tabs */
+.ctabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+.ctabs button{padding:6px 10px;background:var(--s2);border:1px solid var(--bd);border-radius:6px;color:var(--mu);cursor:pointer;font-size:.78em;transition:all .15s}
+.ctabs button:hover{color:var(--tx);border-color:var(--ac)}
+.ctabs button.act{background:var(--ac);color:#fff;border-color:var(--ac)}
+.cpnl{display:none}.cpnl.act{display:block}
+
+/* Timeline */
+.tl{position:relative;padding-left:24px;margin-top:12px}
+.tl::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:2px;background:var(--bd)}
+.tl-i{position:relative;padding:8px 0 18px}.tl-i::before{content:'';position:absolute;left:-18px;top:12px;width:8px;height:8px;border-radius:50%;background:var(--ac);border:2px solid var(--bg)}
+.tl-i .dl{color:var(--ac2);font-weight:600;font-size:.84em;margin-bottom:2px}
+.tl-i p{font-size:.86em}
+
+/* Modal */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;justify-content:center;align-items:flex-start;padding:40px 16px;overflow-y:auto}
+.modal.show{display:flex}
+.modal-c{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:24px;max-width:580px;width:100%;position:relative}
+.modal-x{position:absolute;top:8px;right:12px;background:none;border:none;color:var(--mu);font-size:1.4em;cursor:pointer;padding:4px 8px}
+.modal-top{display:flex;gap:16px;margin-bottom:14px;align-items:flex-start}
+.modal-img{width:140px;border-radius:8px;flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+.modal-info{flex:1;min-width:0}
+.modal-name{font-size:1.1em;font-weight:700;color:var(--gd)}
+.modal-type{font-size:.78em;color:var(--mu);margin-bottom:6px}
+.modal-stats{font-size:.82em;color:var(--ac2);margin-bottom:4px}
+.modal-desc{font-size:.84em;line-height:1.65}
+
+/* Mobile */
+@media(max-width:600px){
+  .hdr h1{font-size:1.35em}
+  .pnl{padding:14px}
+  .ce{padding:10px;gap:10px}
+  .ce-img{width:72px;min-height:105px}
+  .ce-name{font-size:.88em}
+  .ce-goal{font-size:.8em}
+  .ce-why{font-size:.78em}
+  .targets{font-size:.74em;padding:6px 8px}
+  .modal-top{flex-direction:column;align-items:center;text-align:center}
+  .modal-img{width:160px}
+  .modal-c{padding:18px}
+  .flow{font-size:.65em;padding:10px}
+  .cf{padding:10px}
+  .cs{gap:8px}
+  .sc{font-size:.82em}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="hdr">
+    <h1>Pure Branded — 2026 Regional Guide</h1>
+    <p>Post-Burst Protocol · Click any card for full effect text</p>
+    <div class="cd" id="countdown"></div>
+  </div>
+  <div class="cst">Images: <span id="cache-info">loading...</span></div>
+  <div class="nav" id="main-nav"></div>
+  <div id="root"></div>
+</div>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-c">
+    <button class="modal-x" onclick="closeModal()">&times;</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ══════════ IndexedDB Cache (card JSON only — images use browser cache) ══════════
+const DB='ygo-v4',ST='d';let db=null,hits=0,misses=0;
+function odb(){return new Promise((r,j)=>{const q=indexedDB.open(DB,1);q.onupgradeneeded=()=>q.result.createObjectStore(ST);q.onsuccess=()=>{db=q.result;r()};q.onerror=()=>{r()}})}
+function cg(k){return new Promise(r=>{if(!db)return r(null);try{const t=db.transaction(ST,'readonly').objectStore(ST).get(k);t.onsuccess=()=>r(t.result||null);t.onerror=()=>r(null)}catch(e){r(null)}})}
+function cp(k,v){try{if(!db)return;const t=db.transaction(ST,'readwrite');t.objectStore(ST).put(v,k)}catch(e){}}
+function ucs(){const e=document.getElementById('cache-info');if(e)e.textContent=`${hits} cached · ${misses} fetched`}
+const API='https://db.ygoprodeck.com/api/v7/cardinfo.php';
+
+// Fetch queue to avoid rate limits — max 4 concurrent, 200ms between
+const fetchQ=[];let activeF=0;
+function enqueueF(fn){return new Promise((res,rej)=>{fetchQ.push(()=>fn().then(res,rej));drainQ()})}
+function drainQ(){while(activeF<4&&fetchQ.length){activeF++;const fn=fetchQ.shift();fn().finally(()=>{activeF--;setTimeout(drainQ,200)})}}
+
+async function fetchCard(name){
+  const k='c:'+name.toLowerCase();
+  const cached=await cg(k);
+  if(cached){hits++;ucs();return cached}
+  return enqueueF(async()=>{
+    // Re-check cache (another parallel call may have populated it)
+    const c2=await cg(k);if(c2){hits++;ucs();return c2}
+    try{
+      let r=await fetch(API+'?name='+encodeURIComponent(name));
+      if(!r.ok)r=await fetch(API+'?fname='+encodeURIComponent(name));
+      if(!r.ok)return null;
+      const d=await r.json(),card=d.data?.[0];
+      if(card){cp(k,card);misses++;ucs()}
+      return card||null;
+    }catch(e){console.warn('API fetch failed for',name,e);return null}
+  });
+}
+
+// Get image URL from cached card data (no blob conversion — browser caches images natively)
+async function getImgUrl(name){
+  const card=await fetchCard(name);
+  return card?.card_images?.[0]?.image_url_small||card?.card_images?.[0]?.image_url||null;
+}
+
+// Alias for modal
+async function getData(name){return fetchCard(name)}
+
+// ══════════ Modal ══════════
+async function openCard(name){
+  const m=document.getElementById('modal'),b=document.getElementById('modal-body');
+  b.innerHTML='<p style="color:var(--mu)">Loading...</p>';m.classList.add('show');
+  document.body.style.overflow='hidden';
+  const card=await getData(name);
+  if(!card){b.innerHTML=`<p>Could not load "${name}". The API may be rate-limited — try again in a few seconds.</p>`;return}
+  const imgUrl=card?.card_images?.[0]?.image_url_small||card?.card_images?.[0]?.image_url||'';
+  const type=[card.type,card.race,card.attribute].filter(Boolean).join(' · ');
+  const stats=card.atk!=null?`ATK ${card.atk}`+(card.def!=null?` / DEF ${card.def}`:''):'';
+  const lvl=card.level?`Level ${card.level}`:'';
+  b.innerHTML=`<div class="modal-top">
+    ${imgUrl?`<img src="${imgUrl}" class="modal-img" crossorigin="anonymous">`:''}
+    <div class="modal-info"><div class="modal-name">${card.name}</div>
+    <div class="modal-type">${type}</div>
+    ${lvl?`<div class="modal-stats">${lvl}</div>`:''}
+    ${stats?`<div class="modal-stats">${stats}</div>`:''}</div></div>
+    <div class="modal-desc">${card.desc||''}</div>`;
+}
+function closeModal(){document.getElementById('modal').classList.remove('show');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+// ══════════ Nav ══════════
+const TABS=[['how','How It Works'],['cards','All Cards'],['combos','Combos'],['ht','Hand Traps'],['mu','Matchups'],['prep','2-Week Prep'],['look','Lookup']];
+function buildNav(){
+  const n=document.getElementById('main-nav');
+  TABS.forEach(([id,lbl],i)=>{const b=document.createElement('button');b.textContent=lbl;if(!i)b.classList.add('act');
+    b.onclick=()=>{document.querySelectorAll('.sec').forEach(s=>s.classList.remove('act'));
+    document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('act'));
+    document.getElementById('sec-'+id).classList.add('act');b.classList.add('act');window.scrollTo(0,0)};n.appendChild(b)})
+}
+
+// ══════════ Card Data ══════════
+const TM={st:'Starter',bo:'Boss',en:'Engine',pr:'Protection',ex:'Extender',nw:'BPRO',sp:'Spell/Trap',gr:'Grind'};
+function mkT(ts){return ts.map(t=>`<span class="tg tg-${t}">${TM[t]}</span>`).join('')}
+
+// target items → clickable card names
+function mkTargets(label,items){
+  if(!items||!items.length)return'';
+  return`<div class="targets"><b>${label}:</b> ${items.map(([name,why])=>`<span class="t-item" onclick="event.stopPropagation();openCard('${name}')">${name}</span> <span style="color:var(--mu)">${why}</span> `).join('')}</div>`;
+}
+
+// [apiName, display, tags[], goal, why, targets:{label,items[[name,why]]}]
+const C={
+core:[
+  ['Branded Fusion','Branded Fusion',['st','sp'],
+    '<b>Goal:</b> Normal Spell. Fusion Summon sending materials from <b>Deck</b>. You lose nothing from hand — the cornerstone of every Branded combo.',
+    'Restriction: only Fusions from ED rest of turn. #1 Ash Blossom target.',
+    null],
+
+  ['Fallen of the White Dragon','Fallen of the White Dragon',['st','nw'],
+    '<b>Goal:</b> Self-summon from hand by sending an "Albaz" Fusion from ED to GY (COST — can\'t be negated). On summon: recruit any "Ecclesia" from hand/Deck/GY.',
+    'Always treated as "Fallen of Albaz." Lock: L8 Fusion/Synchro only. Run 2-3.',
+    {label:'Usual ED sends (and why)',items:[['Albion the Branded Dragon','— best default. His GY End Phase effect sets Branded in Red for free, giving you a Fusion Summon on opponent\'s turn.'],['Titaniklad the Ash Dragon','— if you already have Branded in Red or need bodies. His End Phase adds/summons Cartesia or Quem from Deck, giving you a monster for next turn.']]}],
+
+  ['Albion the Shrouded Dragon','Albion the Shrouded Dragon',['st','en'],
+    '<b>Goal:</b> From hand/GY: send "Fallen of Albaz" or "Branded" spell/trap from hand or Deck to GY → hand: Special Summon Shrouded. Deck: Shrouded goes to bottom, draw 1. Treated as "Fallen of Albaz" on field/GY.',
+    'Sending Branded cards from Deck sets up GY plays. Run 3.',
+    {label:'Usual Deck sends (and why)',items:[['Branded Retribution','— #1 choice. Once in GY, banish it to recover Branded Fusion from GY. Gives you BF for next turn.'],['Branded in Red','— if you need it in GY for Retribution\'s recovery effect (banish Retribution → add Red from GY to hand).'],['Fallen of Albaz','— if you need the "Albaz" name in GY so Blazing Cartesia can self-summon.']]}],
+
+  ['Blazing Cartesia, the Virtuous','Blazing Cartesia, the Virtuous',['st','pr'],
+    '<b>Goal:</b> Self-summon from hand if Albaz on field/GY. Quick-Effect Fusion L8+ using hand/field. End Phase: returns to hand if a Fusion was sent to GY.',
+    'Starter + interaction. Dodges targeting by chaining fusion. Returns every End Phase. Run 2.',
+    {label:'Usual fusion targets (and why)',items:[['Granguignol the Dusk Dragon','— default on your turn. Granguignol sends Albion Shrouded from Deck to GY, starting the Retribution recycle loop (→ recover Branded Fusion for next turn).'],['Mirrorjade the Iceblade Dragon','— if you have Albaz + DARK in GY/banished. Makes your boss monster during opponent\'s turn via Ecclesia\'s recruit.'],['Albion the Sanctifire Dragon','— if opponent has a problem card with targeting/destruction protection. Non-targeting spin to Deck removes anything.']]}],
+
+  ['Branded in High Spirits','Branded in High Spirits',['st','sp','nw'],
+    '<b>Goal:</b> Quick-Play. Reveal monster → send L8 Fusion with same Type + 2500 ATK/DEF from ED to GY. Optionally discard revealed → search Albaz-mentioning monster. End Phase: returns to hand if Fusion hit GY.',
+    'Repeatable every turn. The ED send triggers GY effects. Run 3.',
+    {label:'Usual ED sends (and why)',items:[['Albion the Branded Dragon','— default. Triggers End Phase set (free Branded in Red). Best value.'],['Titaniklad the Ash Dragon','— if you need a body next turn. Titan searches/summons Cartesia or Quem.']],
+     label2:'Usual searches (and why)',items2:[['Blazing Cartesia, the Virtuous','— #1 target. Self-summons, quick-effect fuses, and returns to hand every EP. Best all-rounder.'],['Fallen of the White Dragon','— if you don\'t have a second starter yet. Opens the Ecclesia Synchro line.'],['Albion the Shrouded Dragon','— if you need him as an Albaz name on field or want his GY send effect later.']]}],
+
+  ['The Fallen & The Virtuous','The Fallen & The Virtuous',['nw','en'],
+    '<b>Goal:</b> Counts as both "Albaz" and "Ecclesia" name. Bridges both halves of the engine.',
+    'Searchable by either side. Run 2-3.',null],
+
+  ['Branded Opening','Branded Opening',['ex','sp'],
+    '<b>Goal:</b> Quick-Play. If you control a Fusion: add 1 monster mentioning "Fallen of Albaz" from Deck, OR summon 1 "Despia" from GY.',
+    'Versatile mid-game. Run 1-3.',
+    {label:'Usual searches (and why)',items:[['Blazing Cartesia, the Virtuous','— need opponent\'s-turn fusion? Grab Cartesia. She self-summons and quick-fuses.'],['Fallen of the White Dragon','— need a starter for next turn? FotW is an independent line.'],['Tri-Brigade Mercourier','— need protection? Mercourier negates from hand when they target your Fusion.']]}],
+],
+
+engine:[
+  ['Fallen of Albaz','Fallen of Albaz',['en'],
+    '<b>Goal:</b> The name the archetype references. Sent from Deck as Fusion Material. Lubellion shuffles him back.',
+    'Rarely summoned. 1 copy — recycled by Lubellion.',null],
+
+  ['Guiding Quem, the Virtuous','Guiding Quem, the Virtuous',['en','nw'],
+    '<b>Goal:</b> (Treated as "Dogmatika" + "Despia".) On summon: send "Fallen of Albaz" or mentioning card from Deck to GY. If a card leaves ED: target Albaz-mentioning monster in GY → summon it.',
+    'On-summon dump triggers GY effects. Revival triggers off every ED interaction. Run 1.',
+    {label:'Usual Deck dumps (and why)',items:[['Albion the Shrouded Dragon','— #1 choice. Shrouded in GY chains into sending Branded Retribution → banish Retribution → recover Branded Fusion. Full recycle.'],['Fallen of Albaz','— if you need the "Albaz" name in GY so Cartesia can self-summon from hand.'],['Blazing Cartesia, the Virtuous','— safe dump. She returns to hand during End Phase if any Fusion hit GY, so you don\'t lose her.']]}],
+
+  ['Incredible Ecclesia, the Virtuous','Incredible Ecclesia, the Virtuous',['en','nw'],
+    '<b>Goal:</b> L4 Tuner. Recruited by Fallen of White. On summon: search "Swordsoul" or "Dogmatika" card. Self-summons if opponent has more monsters.',
+    'Bridge to L8 Synchro. Run 1.',
+    {label:'Usual searches (and why)',items:[['The Golden Swordsoul','— default. L4 Tuner that self-summons → instant L8 Synchro with Fallen of White.'],['Guiding Quem, the Virtuous','— alternative (treated as Dogmatika). Better if you want the dump + revive engine instead of Synchro.']]}],
+
+  ['The Golden Swordsoul','The Golden Swordsoul',['en','nw'],
+    '<b>Goal:</b> L4 Tuner that Special Summons itself. Synchro material for Ecclesia.',
+    'Run 1. Never want to draw — search with Ecclesia.',null],
+
+  ['Tri-Brigade Mercourier','Tri-Brigade Mercourier',['pr','en'],
+    '<b>Goal:</b> (1) Send from <b>HAND or FIELD</b> to GY → negate a monster effect while you control an Albaz Fusion. (2) If <b>banished</b>: add Albaz-mentioning monster from Deck.',
+    'Negate is from HAND/FIELD, not GY! Search triggers when banished as material. Run 1-2.',
+    {label:'When banished, usually searches (and why)',items:[['Blazing Cartesia, the Virtuous','— default. Self-summons, quick-fuses, returns to hand. Best all-purpose target.'],['Fallen of the White Dragon','— if you need a starter for the Ecclesia line next turn.']]}],
+
+  ['Bystial Lubellion','Bystial Lubellion',['en'],
+    '<b>Goal:</b> Tribute 1 LIGHT/DARK → summon from hand/GY. Then activate "Branded" Continuous Spell/Trap from Deck.',
+    'Gets Branded Lost online. Tribute Albion as free cost. Run 1.',
+    {label:'Activates from Deck (and why)',items:[['Branded Lost','— always this. Makes ALL your Fusions un-negatable and un-respondable. Once live, opponent can\'t interact with your fusion plays. There is no other choice — Branded Lost is the only target.']]}],
+
+  ['Comedy','Comedy',['pr'],
+    '<b>Goal:</b> HAND: reveal to protect Despia monster from targeting. GY Quick Effect: tribute Fusion → summon Comedy. Dodges removal.',
+    'Tributing Mirrorjade triggers nuke. Run 0-1 in pure Branded.',null],
+],
+
+ed:[
+  ['Albion the Branded Dragon','Albion the Branded Dragon',['en','bo'],
+    '<b>Goal:</b> L8 Fusion (2500/2000). On field: fuses from field/GY. <b>GY End Phase: set 1 "Branded" spell/trap from Deck.</b>',
+    'Every turn starts/ends with Albion. Also sent from ED by Fallen of White as cost.',
+    {label:'End Phase set targets (and why — priority order)',items:[['Branded in Red','— #1 default. Lets you Fusion Summon during opponent\'s turn using GY materials. This is your main follow-up disruption.'],['Branded Retribution','— set this if you already have Red, or if you expect opponent to combo off (SS3 negate stops their Special Summon effects). Requires returning 2 Fusions from GY to ED.'],['Branded Opening','— set if you need specific names next turn (searches Cartesia, FotW, etc). Less common but useful in grind games.']]}],
+
+  ['Lubellion the Searing Dragon','Lubellion the Searing Dragon',['en'],
+    '<b>Goal:</b> L8 Fusion (2500/3000). Discard 1 → Fusion using self + monster in GY/banished. Shuffles Albaz back.',
+    'Bridge to Mirrorjade. The discard is the only real minus.',null],
+
+  ['Mirrorjade the Iceblade Dragon','Mirrorjade the Iceblade Dragon',['bo'],
+    '<b>Goal:</b> L8 Fusion (3000/2500). Quick Effect: send Fusion from ED to GY → banish 1 opponent\'s monster (non-targeting, non-destruction). If leaves field by opponent: End Phase nuke ALL monsters.',
+    'Boss. Almost nothing immune to the banish.',
+    {label:'ED send targets for banish cost (and why)',items:[['Albion the Branded Dragon','— best choice if available. Triggers ANOTHER End Phase set (free Branded in Red/Retribution). You get value from the cost.'],['Titaniklad the Ash Dragon','— if Albion already used. Titan in GY adds/summons Cartesia or Quem during End Phase. Also pure value from cost.'],['Granguignol the Dusk Dragon','— use if others already in GY. Granguignol\'s GY effect punishes opponent\'s summons (free body when they combo).']]}],
+
+  ['Granguignol the Dusk Dragon','Granguignol the Dusk Dragon',['en'],
+    '<b>Goal:</b> L8 Fusion. On Fusion Summon: send L6+ LIGHT/DARK from Deck or ED to GY. If opponent summons by monster effect: banish from field/GY → summon Dogmatika from Deck or Despia from ED.',
+    'Key recycling piece. Made by Blazing Cartesia.',
+    {label:'On summon, sends',items:[['Albion the Shrouded Dragon','(#1 — Shrouded then sends Branded Retribution to GY → banish Retribution → recover Branded Fusion)'],['Bystial Lubellion','(if you need DARK in GY)']]}],
+
+  ['Ecclesia and the Dark Dragon','Ecclesia and the Dark Dragon',['bo','nw'],
+    '<b>Goal:</b> L8 <b>SYNCHRO</b> (2500/2500). Quick Effect: banish self until End Phase → summon Albaz or L4-or-lower mentioning it from Deck/GY. GY: shuffle self + L8 Fusion in GY + 1 card on field into Deck.',
+    'SYNCHRO, not Fusion. Quick recruit = opponent\'s-turn interaction. GY shuffle = non-targeting non-destruction removal.',
+    {label:'Quick effect recruits',items:[['Blazing Cartesia, the Virtuous','(#1 — she quick-fuses into Mirrorjade during their turn)'],['Guiding Quem, the Virtuous','(dump from Deck + revive engine)'],['Fallen of the White Dragon','(recruits another Ecclesia → more bodies)']]}],
+
+  ['Titaniklad the Ash Dragon','Titaniklad the Ash Dragon',['en'],
+    '<b>Goal:</b> L10 Fusion (3500). If sent to GY: End Phase add or summon "Fallen of Albaz" or "Dogmatika" from Deck.',
+    'Sent from ED by Fallen of White or Mirrorjade as cost.',
+    {label:'End Phase targets',items:[['Blazing Cartesia, the Virtuous','(self-summons next turn)'],['Guiding Quem, the Virtuous','(dump + revive on summon)'],['Fallen of the White Dragon','(second starter for next turn)']]}],
+
+  ['Albion the Sanctifire Dragon','Albion the Sanctifire Dragon',['bo'],
+    '<b>Goal:</b> L12 Fusion. On summon: non-targeting spin 1 card to top/bottom of Deck. GY End Phase: set Branded spell/trap.',
+    'Premium removal. Accessible off Branded in Red.',
+    {label:'End Phase set targets',items:[['Branded in Red','(same as regular Albion)'],['Branded Retribution','(Counter Trap)']]}],
+
+  ['Guardian Chimera','Guardian Chimera',['bo'],
+    '<b>Goal:</b> L10 Fusion. 3 monsters (1+ hand, 1+ field). On summon: draw = hand materials, destroy = field materials.',
+    'Going-second board breaker.',null],
+],
+
+spells:[
+  ['Branded Lost','Branded Lost',['pr','sp'],
+    '<b>Goal:</b> Continuous Spell. Fusions can\'t be negated. Neither player can respond to Fusion Summon effects.',
+    'Blanks Ash/Veiler/Imperm. Activated from Deck by Bystial Lubellion. Run 1.',null],
+
+  ['Branded in Red','Branded in Red',['gr','sp'],
+    '<b>Goal:</b> Normal Trap. Fusion Summon during opponent\'s turn using Albaz Fusion in GY + materials from hand/field/GY.',
+    'Set free by Albion End Phase. Your main opp-turn play. Run 1.',
+    {label:'Usual fusion targets',items:[['Mirrorjade the Iceblade Dragon','(another boss during their turn)'],['Albion the Sanctifire Dragon','(non-targeting spin)'],['Lubellion the Searing Dragon','(stepping stone if needed)']]}],
+
+  ['Branded Retribution','Branded Retribution',['pr','sp'],
+    '<b>Goal:</b> Counter Trap (Spell Speed 3). Negate + destroy a Special Summon effect by returning Fusions to ED. GY: banish → add Branded spell/trap from GY.',
+    'In-engine SS3 negate. GY effect recycles Branded Fusion. Run 0-1.',
+    {label:'GY effect recovers',items:[['Branded Fusion','(#1 — get your best card back for next turn)'],['Branded in Red','(if BF already in hand)'],['Branded Opening','(if you need search)']]}],
+]
+};
+
+// ══════════ Render ══════════
+function mkCard(el,c){
+  const[api,display,tags,goal,why,tgt]=c;
+  const d=document.createElement('div');d.className='ce';
+  d.onclick=()=>openCard(api);
+  const iid='i'+Math.random().toString(36).slice(2,8);
+
+  let tgtHtml='';
+  if(tgt){
+    tgtHtml+=mkTargets(tgt.label,tgt.items);
+    if(tgt.label2)tgtHtml+=mkTargets(tgt.label2,tgt.items2);
+  }
+
+  d.innerHTML=`<div class="ce-img" id="${iid}"><div class="ph">${display}</div></div>
+    <div class="ce-body"><div class="ce-tags">${mkT(tags)}</div><div class="ce-name">${display}</div>
+    <div class="ce-goal">${goal}</div><div class="ce-why">${why}</div>${tgtHtml}</div>`;
+  el.appendChild(d);
+  getImgUrl(api).then(url=>{const c=document.getElementById(iid);if(url&&c)c.innerHTML=`<img src="${url}" loading="lazy" crossorigin="anonymous">`});
+}
+
+function addGroup(title,desc,cards,parent){
+  const p=document.createElement('div');p.className='pnl';
+  p.innerHTML=`<h2>${title}</h2><p style="color:var(--mu);margin-bottom:10px;font-size:.88em">${desc}</p>`;
+  cards.forEach(c=>mkCard(p,c));parent.appendChild(p);
+}
+
+// ══════════ Build Sections ══════════
+function build(){
+  const R=document.getElementById('root');
+
+  // HOW IT WORKS
+  R.insertAdjacentHTML('beforeend',`<div class="sec act" id="sec-how"><div class="pnl">
+  <h2>How Pure Branded Works in 2026</h2>
+  <div class="cpt"><h4>One-Sentence Summary</h4>
+  <p>Send Fusion Monsters from Extra Deck to GY (via Branded Fusion, Fallen of White, or High Spirits) — those Fusions trigger free effects in the GY, so the "cost" of your plays is pure advantage.</p></div>
+
+  <h3>The Plus Engine</h3>
+  <div class="cpt cpt-gn"><h4>Step 1 — Send from Deck/ED, not hand</h4>
+  <p><b>Branded Fusion</b> sends from Main Deck. <b>Fallen of White</b> sends from Extra Deck (as cost!). <b>High Spirits</b> sends from Extra Deck. You never lose hand cards.</p></div>
+
+  <div class="cpt cpt-gn"><h4>Step 2 — Everything triggers in the GY</h4>
+  <p><b>Albion the Branded</b> → End Phase: set Branded in Red (free opp-turn fusion) or Branded Retribution (counter trap negate).<br>
+  <b>Titaniklad</b> → End Phase: search/summon Blazing Cartesia or Guiding Quem from Deck.<br>
+  <b>Albion the Shrouded</b> → sends Branded Retribution to GY (→ banish it → recover Branded Fusion).<br>
+  <b>Blazing Cartesia</b> + <b>High Spirits</b> → return to hand every End Phase.</p></div>
+
+  <div class="cpt cpt-bl"><h4>Step 3 — Fusions are stepping stones</h4>
+  <p>Albion (Fusion #1) → Lubellion (#2) → Mirrorjade (boss). Each going to GY triggers more. One spell cascades into a full board.</p></div>
+
+  <div class="cpt cpt-or"><h4>Step 4 — You play on BOTH turns</h4>
+  <p>Your turn: Mirrorjade + Branded Lost.<br>
+  Opponent's turn: Branded in Red (GY fusion), Ecclesia Synchro (quick recruit → Cartesia → fusion), Mirrorjade (banish), Mercourier (negate from hand/field), Branded Retribution (Spell Speed 3 negate).</p></div>
+
+  <h3>Three Independent Lines</h3>
+  <div class="flow">PLAN A — Branded Fusion
+  BF → Albion → Lubellion → Mirrorjade
+  + Bystial Lub → Branded Lost  +  Albion EP → set Branded in Red
+
+PLAN B — Fallen of White Dragon (NEW)
+  FotW (send Albion from ED as cost) → recruit Ecclesia
+  → Synchro Ecclesia and the Dark Dragon
+  Opp turn: Ecclesia recruits Cartesia → fuses Mirrorjade
+
+PLAN C — Branded in High Spirits Loop
+  High Spirits → send Fusion from ED (triggers GY)
+  → discard → search Cartesia/FotW
+  → End Phase: High Spirits + Cartesia return to hand
+  Repeatable every turn — infinite grind
+
+ALL THREE are independent. If one gets Ashed, pivot to another.</div>
+
+  <h3>The Granguignol Recycling Loop</h3>
+  <div class="flow">Blazing Cartesia + LIGHT/DARK on field
+→ Quick-effect Fusion: Granguignol
+→ Granguignol sends Albion Shrouded from Deck to GY
+→ Shrouded sends Branded Retribution from Deck to GY
+→ Banish Retribution → recover Branded Fusion from GY
+→ End Phase: Cartesia returns to hand
+= Branded Fusion + Cartesia back for next turn</div>
+
+  <div class="cpt"><h4>2026 Change: No More Despia Package</h4>
+  <p>Modern pure Branded dropped Aluber, Comedy, Tragedy, Ad Libitum. The BPRO support (Fallen of White, High Spirits x3, Shrouded x3, The Fallen &amp; The Virtuous x3) is so strong the Despia engine isn't needed.</p></div>
+  </div></div>`);
+
+  // ALL CARDS
+  const cSec=document.createElement('div');cSec.className='sec';cSec.id='sec-cards';
+  addGroup('Starters & Key Spells','These begin your combos. Click any card for full API text.',C.core,cSec);
+  addGroup('Engine & Support','These do their work when sent to GY or banished.',C.engine,cSec);
+  addGroup('Extra Deck (Fusion & Synchro)','Note: Ecclesia and the Dark Dragon is a SYNCHRO.',C.ed,cSec);
+  addGroup('Spells & Traps','Most set/searched from Deck — rarely hard-drawn.',C.spells,cSec);
+  R.appendChild(cSec);
+
+  // COMBOS
+  R.insertAdjacentHTML('beforeend',`<div class="sec" id="sec-combos"><div class="pnl">
+  <h2>Combo Lines</h2>
+  <p style="color:var(--mu);margin-bottom:10px;font-size:.86em">Red = danger. Green = strong.</p>
+  <div class="ctabs">
+    <button class="act" onclick="sc('c1',this)">Branded Fusion</button>
+    <button onclick="sc('c2',this)">Fallen of White</button>
+    <button onclick="sc('c3',this)">High Spirits</button>
+    <button onclick="sc('c4',this)">Combined</button>
+    <button onclick="sc('c5',this)">Granguignol</button>
+  </div>
+
+  <div class="cpnl act" id="c1">
+  <h3>Branded Fusion + materials</h3>
+  <div class="cf">
+    <div class="cs"><div class="sn">1</div><div class="sc"><b>Branded Fusion</b> → send Albaz + material from Deck → <b>Albion</b>.</div></div>
+    <div class="cpt cpt-rd"><h4>CHOKE — Ash Blossom</h4><p>Ash here = turn over. Bait first.</p></div>
+    <div class="cs"><div class="sn">2</div><div class="sc"><b>Albion</b> fuses field/GY → <b>Lubellion</b>. Banish Mercourier → search.</div></div>
+    <div class="cs"><div class="sn">3</div><div class="sc"><b>Lubellion</b> (discard 1) → shuffle Albaz + Lubellion → <b>Mirrorjade</b>.</div></div>
+    <div class="cpt cpt-rd"><h4>CHOKE — Imperm/Veiler on Lubellion</h4><p>Stops Mirrorjade. Albion still in GY.</p></div>
+    <div class="cs"><div class="sn">4</div><div class="sc"><b>Bystial Lubellion</b> (tribute Albion) → <b>Branded Lost</b> from Deck.</div></div>
+    <div class="cs"><div class="sn">5</div><div class="sc">End Phase: <b>Albion</b> GY → set <b>Branded in Red</b> from Deck.</div></div>
+  </div>
+  <div class="cpt cpt-gn"><h4>Board</h4><p>Mirrorjade + Bystial Lub + Branded Lost + Branded in Red set.</p></div></div>
+
+  <div class="cpnl" id="c2">
+  <h3>Fallen of White in hand</h3>
+  <div class="cf">
+    <div class="cs"><div class="sn">1</div><div class="sc"><b>Fallen of White</b> sends <b>Albion</b> from ED to GY (COST) → summon self.<div class="nt">Lock: L8 Fusion/Synchro. Albion in GY = EP trigger.</div></div></div>
+    <div class="cpt cpt-gn"><h4>COST — Can't be negated</h4><p>Even if they negate summon, Albion already in GY.</p></div>
+    <div class="cs"><div class="sn">2</div><div class="sc">Recruit <b>Incredible Ecclesia</b> → she searches <b>Golden Swordsoul</b> (or <b>Guiding Quem</b>).</div></div>
+    <div class="cpt cpt-rd"><h4>CHOKE — Ash on recruit</h4><p>You keep body + Albion in GY. Weakened but alive.</p></div>
+    <div class="cs"><div class="sn">3</div><div class="sc">FotW (L4) + Ecclesia/Golden (L4 Tuner) → <b>Ecclesia and the Dark Dragon</b> (L8 Synchro).</div></div>
+    <div class="cs"><div class="sn">4</div><div class="sc">EP: <b>Albion</b> GY → set <b>Branded in Red</b>.</div></div>
+    <div class="cs"><div class="sn">5</div><div class="sc"><i>Opp turn:</i> <b>Ecclesia</b> banishes self → summons <b>Blazing Cartesia</b> from Deck → Cartesia quick-fuses <b>Mirrorjade</b>.</div></div>
+  </div>
+  <div class="cpt cpt-gn"><h4>Board</h4><p>Ecclesia Synchro (recruit) + Branded in Red. Opp turn: Mirrorjade appears. Ecclesia returns EP.</p></div></div>
+
+  <div class="cpnl" id="c3">
+  <h3>High Spirits + monster to reveal</h3>
+  <div class="cf">
+    <div class="cs"><div class="sn">1</div><div class="sc"><b>High Spirits</b>: reveal Dragon → send <b>Albion</b> from ED to GY.</div></div>
+    <div class="cs"><div class="sn">2</div><div class="sc">Discard revealed → search <b>Blazing Cartesia</b>.</div></div>
+    <div class="cs"><div class="sn">3</div><div class="sc"><b>Cartesia</b> self-summons (Albaz in GY). Quick-effect fusion or save.</div></div>
+    <div class="cs"><div class="sn">4</div><div class="sc">EP: Albion sets Branded spell/trap. <b>High Spirits returns</b>. <b>Cartesia returns</b>.</div></div>
+  </div>
+  <div class="cpt cpt-gn"><h4>Key</h4><p>Both return every EP. Repeatable grind engine — never runs out.</p></div></div>
+
+  <div class="cpnl" id="c4">
+  <h3>Branded Fusion + Fallen of White</h3>
+  <div class="cf">
+    <div class="cs"><div class="sn">1</div><div class="sc"><b>FotW</b> line → <b>Ecclesia Synchro</b>. Lock allows L8 Fusions.</div></div>
+    <div class="cs"><div class="sn">2</div><div class="sc"><b>Branded Fusion</b> → standard → <b>Mirrorjade</b>.</div></div>
+    <div class="cs"><div class="sn">3</div><div class="sc"><b>Bystial Lub</b> → <b>Branded Lost</b>.</div></div>
+    <div class="cs"><div class="sn">4</div><div class="sc">EP: Albion(s) set Branded in Red.</div></div>
+  </div>
+  <div class="cpt cpt-gn"><h4>Board</h4><p>Mirrorjade + Ecclesia + Branded Lost + Branded in Red. 4+ opp-turn interactions.</p></div></div>
+
+  <div class="cpnl" id="c5">
+  <h3>Blazing Cartesia + LIGHT/DARK</h3>
+  <div class="cf">
+    <div class="cs"><div class="sn">1</div><div class="sc"><b>Cartesia</b> fuses → <b>Granguignol</b>.</div></div>
+    <div class="cs"><div class="sn">2</div><div class="sc"><b>Granguignol</b> sends <b>Albion Shrouded</b> from Deck to GY.</div></div>
+    <div class="cs"><div class="sn">3</div><div class="sc"><b>Shrouded</b> sends <b>Branded Retribution</b> from Deck to GY.</div></div>
+    <div class="cs"><div class="sn">4</div><div class="sc">Banish <b>Retribution</b> → add <b>Branded Fusion</b> from GY.</div></div>
+    <div class="cs"><div class="sn">5</div><div class="sc">EP: <b>Cartesia</b> returns to hand.</div></div>
+  </div>
+  <div class="cpt cpt-gn"><h4>Result</h4><p>BF + Cartesia back for next turn. Granguignol in GY punishes opp summons.</p></div></div>
+  </div></div>`);
+
+  // HAND TRAPS
+  R.insertAdjacentHTML('beforeend',`<div class="sec" id="sec-ht"><div class="pnl">
+  <h2>Playing Against Branded</h2>
+  <div class="mu-e" style="border-color:var(--rd)"><h4>Ash Blossom</h4>
+  <p><b>#1: Branded Fusion</b> — collapses standard line (but they can pivot to FotW).<br>
+  <b>#2: Fallen of White's recruit</b> — weaker, body + ED trigger remain.<br>
+  <b>#3: High Spirits</b> (Quick-Play timing).<br>
+  <span style="color:var(--mu);font-size:.88em">If Branded Lost is active, Ash can't stop Fusions.</span></p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Impermanence / Veiler</h4>
+  <p><b>Lubellion</b> — stops Mirrorjade. Cartesia dodges by chaining fusion.<br>
+  <b>Bystial Lubellion</b> — stops Branded Lost.</p></div>
+  <div class="mu-e" style="border-color:var(--bl)"><h4>Dimension Shifter</h4>
+  <p><b>Devastating.</b> Breaks entire GY resource loop.</p></div>
+  <div class="mu-e" style="border-color:var(--gn)"><h4>Ghost Ogre</h4><p><b>Branded Lost</b> or <b>Branded in Red</b> on activation.</p></div>
+  <div class="mu-e" style="border-color:var(--pk)"><h4>Dominus Impulse</h4><p>Hardest single card for Branded in the 2026 meta.</p></div>
+  </div>
+  <div class="pnl"><h2>Playing AS Branded — Protection</h2>
+  <div class="mu-e" style="border-color:var(--gn)"><h4>Three Independent Starters</h4><p>BF Ashed? → FotW. Both stopped? → High Spirits loop. Always have a pivot.</p></div>
+  <div class="mu-e" style="border-color:var(--gn)"><h4>Mercourier</h4><p>Send from <b>HAND or FIELD</b> → negate monster effect targeting your Fusion. Keep one in hand.</p></div>
+  <div class="mu-e" style="border-color:var(--gn)"><h4>Branded Lost</h4><p>Fusions can't be negated or responded to. Get online via Bystial Lub.</p></div>
+  <div class="mu-e" style="border-color:var(--gn)"><h4>Branded Retribution</h4><p>Spell Speed 3 negate. Can't be chained to by normal effects.</p></div>
+  </div>
+  <div class="pnl"><h2>Floodgates</h2>
+  <div class="cpt cpt-rd"><h4>Dimensional Barrier (Fusion)</h4><p>Shuts you down. Side S/T removal.</p></div>
+  <div class="cpt cpt-rd"><h4>Non-Fusion Area</h4><p>Must remove immediately.</p></div>
+  <div class="cpt cpt-rd"><h4>Macro Cosmos / D-Shifter</h4><p>Breaks GY loop.</p></div>
+  </div></div>`);
+
+  // MATCHUPS
+  buildMU(R);
+
+  // PREP
+  R.insertAdjacentHTML('beforeend',`<div class="sec" id="sec-prep"><div class="pnl">
+  <h2>2-Week Prep — Regionals March 28</h2>
+  <div class="tl">
+    <div class="tl-i"><div class="dl">Days 1-2 — Engine</div><p>Goldfish all 5 lines on Dueling Nexus or EDOPro until muscle memory.</p></div>
+    <div class="tl-i"><div class="dl">Days 3-4 — Hand Traps</div><p>Partner hand traps you. Practice pivots: Ash on BF → FotW, Ash on FotW → grind, Imperm on Lubellion.</p></div>
+    <div class="tl-i"><div class="dl">Days 5-7 — Meta</div><p>Watch replays. For each deck: what to Ash, what to Imperm, their end board.</p></div>
+    <div class="tl-i"><div class="dl">Days 8-10 — Matchups</div><p>5+ games vs each top deck. Track win rates. Adjust side deck.</p></div>
+    <div class="tl-i"><div class="dl">Days 11-12 — Tournament Sim</div><p>Full Bo3, 40 min rounds. Practice side deck plans.</p></div>
+    <div class="tl-i"><div class="dl">Day 13 — Final Review</div><p>Lock list. Sleeve. Pack: dice, calc, pen, paper, sleeves.</p></div>
+    <div class="tl-i"><div class="dl">Day 14 — REGIONALS</div><p>Arrive early. Hydrate. Trust practice. Side deck wins events.</p></div>
+  </div></div>
+  <div class="pnl"><h2>Resources</h2>
+  <div class="mu-e" style="border-color:var(--bl)"><h4>Simulators</h4><p><b>Dueling Nexus</b> (browser) · <b>EDOPro</b> (desktop, best rulings) · <b>Master Duel</b> (different banlist, good reps)</p></div>
+  <div class="mu-e" style="border-color:var(--gd)"><h4>Guides</h4><p><b>MetaGamesGX Spreadsheet</b> (180+ combos, 70+ BPRO) · <b>April's Branded Study</b> (YouTube) · <b>YGOPRODeck</b></p></div>
+  </div></div>`);
+
+  // LOOKUP
+  R.insertAdjacentHTML('beforeend',`<div class="sec" id="sec-look"><div class="pnl">
+  <h2>Card Lookup</h2>
+  <p style="color:var(--mu);margin-bottom:10px;font-size:.84em">Images cached in IndexedDB — after first load, never hits API again.</p>
+  <div style="display:flex;gap:6px;margin-bottom:12px">
+    <input type="text" id="csrch" placeholder="Card name..." style="flex:1;padding:10px 12px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--tx);font-size:.9em;outline:none" onkeydown="if(event.key==='Enter')doSearch()">
+    <button onclick="doSearch()" style="padding:10px 16px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:.88em">Search</button>
+  </div><div id="sres"></div></div></div>`);
+}
+
+function sc(id,btn){document.querySelectorAll('.cpnl').forEach(p=>p.classList.remove('act'));document.querySelectorAll('.ctabs button').forEach(b=>b.classList.remove('act'));document.getElementById(id).classList.add('act');btn.classList.add('act')}
+
+// MATCHUPS
+const MU_CARDS={
+  ss:[['Sky Striker Mobilize - Engage!','Engage!',['st'],'Searches any SS card. At 3+ GY spells: draws 1. Recycled by Kagari. <b>ASH THIS.</b>',''],
+      ['Sky Striker Ace - Raye','Raye',['st'],'Quick: tribute self → SS Link-1. Keeps returning.',''],
+      ['Sky Striker Mecha - Widow Anchor','Widow Anchor',['pr'],'Negate 1 monster. At 3+: steal it. Mercourier from hand negates this.',''],
+      ['Sky Striker Ace = Zero','Zero',['bo'],'On summon: search. Quick: tribute → Raye+Roze, pop 1.','']],
+  fs:[["Fiendsmith's Requiem",'Requiem',['st'],'Tribute self → Engraver from Deck. <b>ASH.</b>',''],
+      ['Fiendsmith Engraver','Engraver',['en'],'Gets Requiem equipped → combos. Imperm this.',''],
+      ['D/D/D Wave High King Caesar','Caesar',['bo'],'Detach-to-negate. Bait before BF.','']],
+  mt:[['End of the World Ruler','EotW Ruler',['st','bo'],'Reveal + 2000 LP → banish Ritual Spell from Deck → Ritual Summon tributing from DECK.','']],
+  vs:[['Vanquish Soul Razen','Razen',['st'],'Normal: search non-Warrior VS. <b>ASH.</b>',''],
+      ['Dr. Mad Love','Dr. Mad Love',['en'],'Searches VS spells/traps.','']],
+  ma:[['Maliss P White Rabbit','White Rabbit',['st'],'Normal → set Maliss trap from Deck. <b>ASH.</b>',''],
+      ['Maliss P Dormouse','Dormouse',['en'],'Summoned from Deck by trap → extends.','']],
+  rt:[['Radiant Typhoon Krosea','Krosea',['st'],'If Quick-Play activates: summon self. On summon: search any RT or MST.',''],
+      ['Radiant Typhoon Meghala','Meghala',['en'],'Only RT that summons from Deck.',''],
+      ['Radiant Typhoon Mandate','Mandate',['pr'],'Trap negate — only when MST activates.','']],
+  dt:[['Dracotail Lukias','Lukias',['st'],'On summon: search Dracotail monster.',''],
+      ['Rahu Dracotail','Rahu Dracotail',['sp'],'Fusion using monsters from DECK.','']],
+};
+
+function buildMU(R){
+  const s=document.createElement('div');s.className='sec';s.id='sec-mu';
+  const defs=[
+    ['Sky Striker','b-fav','Favored','Control: 1 monster + recycling spells. Engage searches everything. Spells get bonuses at 3+ in GY.','ss',
+      'Ash → Engage. Imperm → Kagari/Zero. Ghost Ogre → Widow Anchor. Ignore Raye.'],
+    ['Fiendsmith','b-ev','Even','Combo. Requiem tributes → Engraver from Deck → Link/Xyz bosses with multiple negates.','fs',
+      'Ash → Requiem. Imperm → Engraver. Bait negates before BF.'],
+    ['Mitsurugi','b-ev','Even','Ritual combo. End of the World Ruler pays LP → banishes Ritual Spell from Deck → tributes from DECK.','mt',
+      'Ash → Ruler (Deck banish). Droll after any search. Early damage matters (2000 LP/use).'],
+    ['K9 Vanquish Soul','b-ev','Even','Mid-range. Reveals from hand for effects. K9 adds L5 spam + quick bounce. Hand IS resource.','vs',
+      'Ash → Razen. Imperm weaker (hand reveals). Kaijus great.'],
+    ['Maliss','b-un','Slightly Unfavored','Combo. White Rabbit sets trap from Deck → summons Dormouse → Link chain. Strong recursion. HARDEST MU.','ma',
+      'Ash → White Rabbit. Nibiru good. Win die roll.'],
+    ['Radiant Typhoon','b-fav','Slightly Favored','WIND Quick-Play Spell archetype. Krosea searches on Quick-Play activation. Mandate is their negate (needs MST).','rt',
+      'Ash → Krosea (search). Anti-Spell Fragrance devastating. Solemn Report banishes key spells.'],
+    ['Dracotail','b-ev','Even','Fusion archetype. Monsters set S/T from Deck when used as Fusion Material. Rahu fuses from DECK.','dt',
+      'Ash → Lukias or Rahu. Side S/T removal for their traps. Patient grind.'],
+    ['Branded Dracotail','b-ev','Even (Mirror)','Branded + Dracotail hybrid. Same Mirrorjade plan. Whoever resolves fusion spell first wins.',null,
+      'Mercourier for their Mirrorjade. Ash their BF/Rahu. Dimensional Barrier (Fusion) in side.'],
+  ];
+
+  defs.forEach(([name,badge,label,desc,key,ht])=>{
+    const p=document.createElement('div');p.className='pnl';
+    p.innerHTML=`<div class="mu-e"><h4>${name} <span class="badge ${badge}">${label}</span></h4>
+    <div class="cpt"><h4>What does ${name} do?</h4><p>${desc}</p></div></div>`;
+    if(key&&MU_CARDS[key]){
+      const h=document.createElement('h3');h.textContent='Key Cards';h.style.cssText='color:var(--gd);margin:6px 0';p.appendChild(h);
+      MU_CARDS[key].forEach(c=>mkCard(p,c));
+    }
+    p.insertAdjacentHTML('beforeend',`<div class="mu-ht"><strong>Hand trap targets:</strong> ${ht}</div>`);
+    s.appendChild(p);
+  });
+  R.appendChild(s);
+}
+
+async function doSearch(){
+  const q=document.getElementById('csrch').value.trim();if(!q)return;
+  const r=document.getElementById('sres');r.innerHTML='<p style="color:var(--mu)">Searching...</p>';
+  try{
+    const res=await fetch(API+'?fname='+encodeURIComponent(q));if(!res.ok)throw 0;
+    const d=await res.json(),cards=(d.data||[]).slice(0,8);
+    if(!cards.length){r.innerHTML='<p style="color:var(--mu)">No cards found.</p>';return}
+    r.innerHTML='';
+    for(const c of cards){
+      // Cache each card
+      cp('c:'+c.name.toLowerCase(),c);
+      const div=document.createElement('div');div.className='ce';div.onclick=()=>openCard(c.name);
+      const imgUrl=c?.card_images?.[0]?.image_url_small||'';
+      const type=[c.type,c.race,c.attribute].filter(Boolean).join(' · ');
+      const stats=c.atk!=null?`ATK ${c.atk}`+(c.def!=null?` / DEF ${c.def}`:''):'';
+      div.innerHTML=`<div class="ce-img">${imgUrl?`<img src="${imgUrl}" crossorigin="anonymous">`:`<div class="ph">${c.name}</div>`}</div>
+        <div class="ce-body"><div class="ce-name">${c.name}</div>
+        <div style="font-size:.78em;color:var(--mu)">${type} ${stats?'· '+stats:''}</div>
+        <div style="font-size:.8em;margin-top:4px">${(c.desc||'').slice(0,180)}${(c.desc||'').length>180?'...':''}</div></div>`;
+      r.appendChild(div);
+    }
+  }catch{r.innerHTML='<p style="color:var(--mu)">No results.</p>'}
+}
+
+// INIT
+async function init(){
+  await odb();buildNav();build();
+  const uc=()=>{const d=new Date('2026-03-28T09:00:00')-new Date();if(d<=0){document.getElementById('countdown').textContent='REGIONALS DAY!';return}
+    document.getElementById('countdown').textContent=`${Math.floor(d/864e5)}d ${Math.floor(d%864e5/36e5)}h until Regionals`};
+  uc();setInterval(uc,60000);
+}
+init();
+</script>
+</body>
+</html>
