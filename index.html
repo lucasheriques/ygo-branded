@@ -276,7 +276,7 @@ core:[
   ['Blazing Cartesia, the Virtuous','Blazing Cartesia, the Virtuous',['st','pr'],
     '<b>Goal:</b> Self-summon from hand if Albaz on field/GY. Quick-Effect Fusion L8+ using hand/field. End Phase: returns to hand if a Fusion was sent to GY.',
     'Starter + interaction. Dodges targeting by chaining fusion. Returns every End Phase. Run 2.',
-    {label:'Usual fusion targets (and why)',items:[['Granguignol the Dusk Dragon','— default on your turn. Granguignol sends Albion Shrouded from Deck to GY, starting the Retribution recycle loop (→ recover Branded Fusion for next turn).'],['Mirrorjade the Iceblade Dragon','— if you have Albaz + DARK in GY/banished. Makes your boss monster during opponent\'s turn via Ecclesia\'s recruit.'],['Albion the Sanctifire Dragon','— if opponent has a problem card with targeting/destruction protection. Non-targeting spin to Deck removes anything.']]}],
+    {label:'Usual fusion targets (and why)',items:[['Granguignol the Dusk Dragon','— default on your turn. Granguignol sends Albion Shrouded from Deck to GY, starting the Retribution recycle loop (→ recover Branded Fusion for next turn).'],['Mirrorjade the Iceblade Dragon','— if you have Albaz + DARK in GY/banished. Makes your boss monster during opponent\'s turn via Ecclesia\'s recruit.'],['Albion the Sanctifire Dragon','— untargetable body. Quick Effect summons from GY to both fields. Niche but hard to remove.']]}],
 
   ['Branded in High Spirits','Branded in High Spirits',['st','sp','nw'],
     '<b>Goal:</b> Quick-Play. Reveal monster → send L8 Fusion with same Type + 2500 ATK/DEF from ED to GY. Optionally discard revealed → search Albaz-mentioning monster. End Phase: returns to hand if Fusion hit GY.',
@@ -288,10 +288,15 @@ core:[
     '<b>Goal:</b> Counts as both "Albaz" and "Ecclesia" name. Bridges both halves of the engine.',
     'Searchable by either side. Run 2-3.',null],
 
+  ['Aluber the Jester of Despia','Aluber the Jester of Despia',['st'],
+    '<b>Goal:</b> On Normal/Special Summon: search 1 "Branded" spell/trap or "Polymerization" from Deck. DARK Fairy L4.',
+    'Searches Branded Fusion on summon — the best card in the deck. Also searched by Branded Opening. Run 1-2.',
+    {label:'Usual searches (and why)',items:[['Branded Fusion','— #1 always. Normal Spell that Fusion Summons from Deck.'],['Branded in Red','— if you already have BF or it\'s mid-game and need opp-turn fusion access.'],['Branded Lost','— niche. If you expect negation-heavy opponent and want to hard-activate it.']]}],
+
   ['Branded Opening','Branded Opening',['ex','sp'],
-    '<b>Goal:</b> Quick-Play. If you control a Fusion: add 1 monster mentioning "Fallen of Albaz" from Deck, OR summon 1 "Despia" from GY.',
-    'Versatile mid-game. Run 1-3.',
-    {label:'Usual searches (and why)',items:[['Blazing Cartesia, the Virtuous','— need opponent\'s-turn fusion? Grab Cartesia. She self-summons and quick-fuses.'],['Fallen of the White Dragon','— need a starter for next turn? FotW is an independent line.'],['Tri-Brigade Mercourier','— need protection? Mercourier negates from hand when they target your Fusion.']]}],
+    '<b>Goal:</b> Quick-Play Spell. Discard 1 → add 1 "Despia" monster from Deck to hand OR Special Summon 1 "Despia" from GY. GY: banish to protect a Fusion from destruction.',
+    'Searches Aluber (who then searches Branded Fusion). The GY protection effect is relevant too — banish Opening from GY to save Mirrorjade from destruction. Run 0-1.',
+    {label:'Usual targets',items:[['Aluber the Jester of Despia','— #1. Aluber on summon searches Branded Fusion or another Branded spell/trap. Two-card chain.']]}],
 ],
 
 engine:[
@@ -323,16 +328,13 @@ engine:[
     'Gets Branded Lost online. Tribute Albion as free cost. Run 1.',
     {label:'Activates from Deck (and why)',items:[['Branded Lost','— always this. Makes ALL your Fusions un-negatable and un-respondable. Once live, opponent can\'t interact with your fusion plays. There is no other choice — Branded Lost is the only target.']]}],
 
-  ['Comedy','Comedy',['pr'],
-    '<b>Goal:</b> HAND: reveal to protect Despia monster from targeting. GY Quick Effect: tribute Fusion → summon Comedy. Dodges removal.',
-    'Tributing Mirrorjade triggers nuke. Run 0-1 in pure Branded.',null],
 ],
 
 ed:[
   ['Albion the Branded Dragon','Albion the Branded Dragon',['en','bo'],
     '<b>Goal:</b> L8 Fusion (2500/2000). On field: fuses from field/GY. <b>GY End Phase: set 1 "Branded" spell/trap from Deck.</b>',
     'Every turn starts/ends with Albion. Also sent from ED by Fallen of White as cost.',
-    {label:'End Phase set targets (and why — priority order)',items:[['Branded in Red','— #1 default. Lets you Fusion Summon during opponent\'s turn using GY materials. This is your main follow-up disruption.'],['Branded Retribution','— set this if you already have Red, or if you expect opponent to combo off (SS3 negate stops their Special Summon effects). Requires returning 2 Fusions from GY to ED.'],['Branded Opening','— set if you need specific names next turn (searches Cartesia, FotW, etc). Less common but useful in grind games.']]}],
+    {label:'End Phase set targets (and why — priority order)',items:[['Branded in Red','— #1 default. Lets you Fusion Summon during opponent\'s turn using GY materials. This is your main follow-up disruption.'],['Branded Retribution','— set this if you already have Red, or if you expect opponent to combo off (SS3 negate stops their Special Summon effects). Requires returning 2 Fusions from GY to ED.'],['Branded in White','— set if you run it. Quick-Play fusion spell usable on either turn. Alternative to Red.']]}],
 
   ['Lubellion the Searing Dragon','Lubellion the Searing Dragon',['en'],
     '<b>Goal:</b> L8 Fusion (2500/3000). Discard 1 → Fusion using self + monster in GY/banished. Shuffles Albaz back.',
@@ -359,13 +361,34 @@ ed:[
     {label:'End Phase targets',items:[['Blazing Cartesia, the Virtuous','(self-summons next turn)'],['Guiding Quem, the Virtuous','(dump + revive on summon)'],['Fallen of the White Dragon','(second starter for next turn)']]}],
 
   ['Albion the Sanctifire Dragon','Albion the Sanctifire Dragon',['bo'],
-    '<b>Goal:</b> L12 Fusion. On summon: non-targeting spin 1 card to top/bottom of Deck. GY End Phase: set Branded spell/trap.',
-    'Premium removal. Accessible off Branded in Red.',
-    {label:'End Phase set targets',items:[['Branded in Red','(same as regular Albion)'],['Branded Retribution','(Counter Trap)']]}],
+    '<b>Goal:</b> L12 Fusion (Albaz + 1 LIGHT Spellcaster). Cannot be targeted by opponent. Quick Effect (opponent\'s turn): target 2 monsters in any GY(s) → summon 1 to each field. Cannot be used as Fusion Material.',
+    'Untargetable body with a powerful lock play. Dump a floodgate to GY during your combo, then on opponent\'s turn Sanctifire summons it to <b>their</b> field — locking them — while recovering something useful to yours. Run 1 in ED.',
+    {label:'Lock targets to summon to opponent\'s field',items:[['Archlord Kristya','— neither player can Special Summon. Your board is already set up, so this shuts the opponent out completely.'],['Jowgen the Spiritualist','— neither player can Special Summon monsters. Smaller body so easier to out, but still forces them to waste resources.']]}],
 
-  ['Guardian Chimera','Guardian Chimera',['bo'],
-    '<b>Goal:</b> L10 Fusion. 3 monsters (1+ hand, 1+ field). On summon: draw = hand materials, destroy = field materials.',
-    'Going-second board breaker.',null],
+  ['Secreterion Dragon','Secreterion Dragon',['bo','mu'],
+    '<b>Goal:</b> L8 Fusion (1 Dragon + 1 Spellcaster). While you control this Fusion Summoned card: opponent cannot activate effects of Special Summoned Dragon/Spellcaster monsters they control.',
+    'Matchup-dependent floodgate. Strong vs Dragon/Spellcaster-heavy decks (Branded mirror, Dogmatika, Spright). Natural materials in-engine (Albaz + Cartesia/Ecclesia). Run 0-1 in ED.',null],
+
+  ['Despian Proskenion','Despian Proskenion',['bo'],
+    '<b>Goal:</b> L11 Fusion (1 "Despia" + 1 LIGHT + 1 DARK). Quick Effect: target 1 Fusion/Synchro/Xyz/Link in opponent\'s GY → banish it or Special Summon it to your field.',
+    'Steals opponent\'s ED monsters from GY. Accessible because Aluber is a Despia monster. Requires 3 materials so harder to make — usually off Branded Fusion sending Aluber + Albaz + another. Run 0-1 in ED.',null],
+
+  ['Alba-Lenatus the Abyss Dragon','Alba-Lenatus the Abyss Dragon',['en'],
+    '<b>Goal:</b> L10 Fusion (Albaz + 1+ Dragons). Can also be summoned by sending materials from Monster Zones to GY (contact fusion). Attacks up to the number of materials used. GY End Phase if sent there this turn: search 1 "Polymerization" or "Fusion" Normal Spell.',
+    'GY End Phase searches Branded Fusion (it\'s a "Fusion" Normal Spell). Multi-attack is relevant going second. Contact fusion bypasses Branded Fusion restrictions. Run 0-1 in ED.',null],
+
+  ['Rindbrumm the Striking Dragon','Rindbrumm the Striking Dragon',['bo','mu'],
+    '<b>Goal:</b> L8 Fusion (Albaz + 1 Beast/Beast-Warrior/Winged Beast). Quick Effect: when a Fusion/Synchro/Xyz/Link activates, negate it and optionally bounce 1 monster. GY (opponent\'s turn): revive itself or target Albaz from GY.',
+    'ED monster effect negate + bounce. Materials aren\'t natural in pure Branded — mainly made via Fallen of Albaz\'s on-field contact fusion using opponent\'s monsters, or Super Poly. GY revival gives recurring value. Run 0-1 in ED.',null],
+
+  ['The Dragon that Devours the Dogma','The Dragon that Devours the Dogma',['bo'],
+    '<b>Goal:</b> L8 Fusion (Albaz + 1 LIGHT/DARK + 1 Effect Monster). On summon: shuffle up to 2 cards from any GY(s)/banished into Deck. While Ecclesia is on field/in either GY: gains 500 ATK and <b>unaffected by other card effects</b>. GY End Phase: search Dogmatika or Tri-Brigade.',
+    'Unaffected 3500 beater when Ecclesia is in GY (which she usually is). GY disruption on summon. 3-material requirement but all types are natural in-engine. Run 0-1 in ED.',
+    {label:'GY End Phase searches',items:[['Incredible Ecclesia, the Virtuous','(if you want a body/Tuner next turn)'],['Tri-Brigade Mercourier','(hand negate for protection)']]}],
+
+  ['Khaos Starsource Dragon','Khaos Starsource Dragon',['bo'],
+    '<b>Goal:</b> L8 Fusion (1 LIGHT/DARK Dragon + 1 Dragon). On Fusion Summon: target and destroy cards opponent controls equal to the number of LIGHT/DARK monsters used as material. If banished: target 1 L4 LIGHT/DARK Dragon you control → make it L8.',
+    'Board-breaking Fusion. Destroy up to 2 cards on summon (both materials are usually LIGHT/DARK). Easy materials — any two Dragons work. Good going-second option. Run 0-1 in ED.',null],
 ],
 
 spells:[
@@ -373,15 +396,20 @@ spells:[
     '<b>Goal:</b> Continuous Spell. Fusions can\'t be negated. Neither player can respond to Fusion Summon effects.',
     'Blanks Ash/Veiler/Imperm. Activated from Deck by Bystial Lubellion. Run 1.',null],
 
+  ['Branded in White','Branded in White',['gr','sp'],
+    '<b>Goal:</b> Normal Spell. Fusion Summon using monsters from hand/field, must include 1 Dragon. If you use "Fallen of Albaz" as material, can also banish from GY. GY: if sent there by Albaz\'s effect this turn, set this card during End Phase.',
+    'Your-turn-only fusion spell (Normal Spell, not Quick-Play). Lets you banish from GY when using Albaz, giving more material flexibility than Branded Fusion. Some builds play this alongside or instead of Red. Run 0-1.',
+    {label:'Usual fusion targets',items:[['Mirrorjade the Iceblade Dragon','(boss + banish removal)'],['Albion the Branded Dragon','(triggers End Phase set)'],['Albion the Sanctifire Dragon','(untargetable L12 — needs Albaz + LIGHT Spellcaster)'],['Lubellion the Searing Dragon','(stepping stone → Mirrorjade)']]}],
+
   ['Branded in Red','Branded in Red',['gr','sp'],
-    '<b>Goal:</b> Normal Trap. Fusion Summon during opponent\'s turn using Albaz Fusion in GY + materials from hand/field/GY.',
-    'Set free by Albion End Phase. Your main opp-turn play. Run 1.',
-    {label:'Usual fusion targets',items:[['Mirrorjade the Iceblade Dragon','(another boss during their turn)'],['Albion the Sanctifire Dragon','(non-targeting spin)'],['Lubellion the Searing Dragon','(stepping stone if needed)']]}],
+    '<b>Goal:</b> Quick-Play Spell. Fusion Summon 1 Level 8+ Fusion from ED, using monsters from hand/field as material, but it can\'t attack directly that turn. Also recovers: target 1 "Despia" or "Fallen of Albaz" in GY → add to hand.',
+    'Set free by Albion End Phase. Quick-Play means it\'s <b>live the turn it\'s set</b> — your main opponent\'s-turn fusion play. <b>Flex slot</b> in some builds. Run 0-1.',
+    {label:'Usual fusions off Red (and when)',items:[['Mirrorjade the Iceblade Dragon','— default. Quick-effect banish a monster (non-targeting, non-destruction) during their turn. If they out it, End Phase nuke wipes the board.'],['Albion the Sanctifire Dragon','— untargetable L12 body. If you dumped a floodgate (Kristya/Jowgen), summon it to their field to lock them out.'],['Albion the Branded Dragon','— grind game. Use if you need another Albion cycle (End Phase sets another Branded spell/trap). Also fuses from field/GY on field.'],['Lubellion the Searing Dragon','— stepping stone if you need specific materials shuffled. Discard 1 → fuse using itself + GY/banished monster into Mirrorjade.'],['Secreterion Dragon','— matchup call. If opponent relies on Dragon/Spellcaster effects (mirror match, etc.), floodgate shuts them down.']]}],
 
   ['Branded Retribution','Branded Retribution',['pr','sp'],
     '<b>Goal:</b> Counter Trap (Spell Speed 3). Negate + destroy a Special Summon effect by returning Fusions to ED. GY: banish → add Branded spell/trap from GY.',
     'In-engine SS3 negate. GY effect recycles Branded Fusion. Run 0-1.',
-    {label:'GY effect recovers',items:[['Branded Fusion','(#1 — get your best card back for next turn)'],['Branded in Red','(if BF already in hand)'],['Branded Opening','(if you need search)']]}],
+    {label:'GY effect recovers',items:[['Branded Fusion','(#1 — get your best card back for next turn)'],['Branded in Red','(if BF already in hand)'],['Branded in White','(if you run it and need fusion access)']]}],
 ]
 };
 
@@ -467,8 +495,8 @@ ALL THREE are independent. If one gets Ashed, pivot to another.</div>
 → End Phase: Cartesia returns to hand
 = Branded Fusion + Cartesia back for next turn</div>
 
-  <div class="cpt"><h4>2026 Change: No More Despia Package</h4>
-  <p>Modern pure Branded dropped Aluber, Comedy, Tragedy, Ad Libitum. The BPRO support (Fallen of White, High Spirits x3, Shrouded x3, The Fallen &amp; The Virtuous x3) is so strong the Despia engine isn't needed.</p></div>
+  <div class="cpt"><h4>2026 Change: Trimmed Despia Package</h4>
+  <p>Modern pure Branded dropped most of the Despia engine (Comedy, Tragedy, Ad Libitum) but keeps <b>Aluber</b> (1-2 copies) as a standalone searcher — his on-summon Branded Fusion search is too good to cut. The BPRO support (Fallen of White, High Spirits x3, Shrouded x3, The Fallen &amp; The Virtuous x3) replaces the rest of the Despia package.</p></div>
   </div></div>`);
 
   // ALL CARDS

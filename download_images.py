@@ -33,6 +33,7 @@ CARDS = [
     "Branded in High Spirits",
     "The Fallen & The Virtuous",
     "Branded Opening",
+    "Aluber the Jester of Despia",
     # Engine
     "Fallen of Albaz",
     "Guiding Quem, the Virtuous",
@@ -40,7 +41,6 @@ CARDS = [
     "The Golden Swordsoul",
     "Tri-Brigade Mercourier",
     "Bystial Lubellion",
-    "Comedy",
     # Extra Deck
     "Albion the Branded Dragon",
     "Lubellion the Searing Dragon",
@@ -49,9 +49,15 @@ CARDS = [
     "Ecclesia and the Dark Dragon",
     "Titaniklad the Ash Dragon",
     "Albion the Sanctifire Dragon",
-    "Guardian Chimera",
+    "Secreterion Dragon",
+    "Despian Proskenion",
+    "Alba-Lenatus the Abyss Dragon",
+    "Rindbrumm the Striking Dragon",
+    "The Dragon that Devours the Dogma",
+    "Khaos Starsource Dragon",
     # Spells/Traps
     "Branded Lost",
+    "Branded in White",
     "Branded in Red",
     "Branded Retribution",
     # Matchup - Sky Striker
