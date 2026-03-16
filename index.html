@@ -771,6 +771,16 @@ const MU_CARDS={
   me:[['Mementotlan Dark Blade','Dark Blade',['st'],'Destroy a Memento you control → summon any Memento from Deck. Best starter. <b>ASH THIS.</b>',''],
       ['Mementotlan Angwitch','Angwitch',['st','en'],'On summon: search any Memento card. Also revives L2-or-lower from GY. <b>ASH if no other starters.</b>',''],
       ['Mementoal Tecuhtlica - Combined Creation','Combined Creation',['bo'],'Boss. Attacks all opp monsters. When opp activates: summon Mementos from hand/GY. Protected by Goblin (targeting) and Mace (steals monsters).','']],
+  rz:[['Ice Ryzeal','Ice Ryzeal',['st'],'Normal Summon → recruit any Ryzeal from Deck. <b>ASH THIS.</b>',''],
+      ['Ext Ryzeal','Ext Ryzeal',['en'],'Self-summons by sending Xyz from ED to GY (sends Mereologic Aggregator = free negate before Xyz). Key extender.',''],
+      ['Ryzeal Cross','Ryzeal Cross',['bo','pr'],'Field Spell. Recycles, draws, and can negate by detaching Xyz material. Their persistent advantage engine.',''],
+      ['Ryzeal Detonator','Ryzeal Detonator',['bo'],'Rank 4 boss (3000 ATK). Destroys opponent\'s cards on either turn.','']],
+  be:[['Sage with Eyes of Blue','Sage',['st'],'Tuner starter. Combo opens into Blue-Eyes from Deck. <b>ASH or IMPERM THIS.</b>',''],
+      ['Blue-Eyes Ultimate Spirit Dragon','Spirit Dragon',['bo'],'L12 Synchro. Omni-negate (+1000 ATK on negate). Protects GY from banishing. Floats into any LIGHT Dragon Synchro.',''],
+      ['Indigo-Eyes Silver Dragon','Indigo-Eyes',['bo'],'Rank 8 Xyz. On summon: negate all face-up opponent\'s cards.','']],
+  wf:[['Elfnote Lucina','Lucina',['st'],'Self-summons to center MMZ. Searches Elfnotes. Must go to center zone. <b>ASH or IMPERM THIS.</b>',''],
+      ['Elfnote Tinia','Tinia',['en','pr'],'Places Elfnote Continuous Spells. Can banish a random card from opponent\'s hand.',''],
+      ['Elfnote Power Patron','Power Patron',['en'],'Quick-effect Synchro Summon enabler. Extends into Baronne de Fleur.','']],
 };
 
 function buildMU(R){
@@ -798,6 +808,12 @@ function buildMU(R){
       'Ash → <b>Lukias</b> (search) or <b>Rahu</b> (Deck fusion). Side S/T removal for their set traps. Patient grind — don\'t overextend.'],
     ['Branded Dracotail','b-ev','Even (Mirror)','<b>Branded + Dracotail hybrid.</b> Same Mirrorjade plan as us, but with Dracotail\'s trap generation layered on top. Whoever resolves their fusion spell first usually wins. Their Rahu fuses from Deck and sets traps as bonus. In the mirror, Mercourier is your MVP — save it for their Mirrorjade\'s banish effect.',null,
       'Mercourier for their Mirrorjade. Ash → their BF or Rahu. Dimensional Barrier (Fusion) in side deck.'],
+    ['Ryzeal','b-un','Slightly Unfavored','<b>Rank 4 Xyz toolbox — arguably best deck in format.</b> Ice Ryzeal Normal Summons and recruits any Ryzeal from Deck. Ext Ryzeal self-summons by sending an Xyz from ED to GY — this sends Mereologic Aggregator, giving them a <b>free negate before they even Xyz Summon</b>. Ryzeal Cross (Field Spell) recycles, draws, and negates by detaching Xyz material. Their boss Ryzeal Detonator (Rank 4, 3000 ATK) destroys your cards on either turn. Tiny engine = they run 10+ hand traps. Very consistent, rarely bricks, plays through interaction well. Nibiru is weak (low summon count).','rz',
+      'Ash → <b>Ice Ryzeal</b> (recruit from Deck — best target). Imperm → Ice Ryzeal on summon. Droll after any search. Watch for Mereologic Aggregator negate (triggers before their Xyz even hits field). Kaiju their Detonator. D-Shifter less effective (they don\'t rely on GY heavily).'],
+    ['Blue-Eyes','b-ev','Even','<b>Synchro/Xyz combo — surging after White Destiny support.</b> Uses L1 LIGHT Tuners (Sage with Eyes of Blue is the combo starter) to summon Blue-Eyes White Dragon, then Synchro into L9-12 bosses. Spirit Dragon (L12 Synchro) is an omni-negate that gains 1000 ATK on negate, protects their GY from banishing, and floats into any LIGHT Dragon Synchro when it leaves. Indigo-Eyes Silver Dragon (Rank 8 Xyz) negates ALL face-up opponent\'s cards on summon. One-card combos can end on 4-5 negates. Super Poly is strong here since they field LIGHT Dragons.','be',
+      'Ash → <b>Sage with Eyes of Blue</b> (combo starter — kills the line). Imperm → Sage also works. Super Poly using their LIGHT Dragons as material. Spirit Dragon protects their GY from banish — don\'t rely on GY disruption. Kaiju their Spirit Dragon if possible.'],
+    ['White Forest','b-ev','Even','<b>Synchro control (Elfnote) — topped YCS Richmond.</b> Elfnote Fairy monsters cycle through each other to set up Continuous Spells/Traps. Locked to Synchro-only ED summons. Lucina self-summons to center Main Monster Zone and searches Elfnotes. Tinia places Continuous Spells and can <b>banish a random card from your hand</b>. Power Patron enables quick-effect Synchro Summons. They set up Baronne de Fleur (omni-negate) + Elfnote disruptions. The center MMZ mechanic is key — disrupting Lucina breaks their whole chain.','wf',
+      'Ash/Imperm → <b>Lucina</b> (must go to center MMZ — if stopped, chain breaks). Watch for Tinia hand banish (random, can't play around). Baronne de Fleur is their omni-negate — bait it before BF. Synchro-locked so Super Poly targets are limited.'],
   ];
   // Rogue matchups — choke points only
   // Rogue section
@@ -817,8 +833,23 @@ function buildMU(R){
   <p><b>Control + Quick-Play engine.</b> RESCUE! searches Quick-Play interruptions. Turbulence summons from Deck.</p>
   <p><b>Choke:</b> Ash → Turbulence (summon from Deck). Imperm → any on-summon searcher. Remove their set Quick-Plays before committing.</p></div>
   <div class="mu-e" style="border-color:var(--or)"><h4>Tenpai Dragon</h4>
-  <p><b>OTK burn.</b> Battle Phase Synchro Summons that deal burn damage. Can OTK from empty board through a single monster.</p>
-  <p><b>Choke:</b> Nibiru during Battle Phase (they Synchro during BP). Mirrorjade banish their Tenpai before BP. Don't pass with low LP and no interaction.</p></div>`;
+  <p><b>OTK burn.</b> Battle Phase Synchro Summons that deal burn damage. Can OTK from empty board through a single monster. Sangen Summoning (Field Spell) makes them immune to monster effects during Main Phase — interact during Battle Phase or use Spells/Traps.</p>
+  <p><b>Choke:</b> Ash → Paidra (searches Sangen spells/traps). Nibiru during Battle Phase. Mirrorjade banish their Tenpai before BP. Don't pass with low LP and no interaction. Cards that end the Battle Phase are devastating.</p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Phantom Beast (Chimera)</h4>
+  <p><b>Mid-range Fusion.</b> Compact combos (only 4 summons — dodges Nibiru). Mirror Swordknight is a 1-card starter with GY monster negate. Chimera Fusion returns to hand each turn for recursive loops.</p>
+  <p><b>Choke:</b> Ash → Big-Winged Berfomet (searches Gazelle + Chimera Fusion). Imperm → Mirror Swordknight on summon. Nibiru is useless (too few summons).</p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Yubel</h4>
+  <p><b>Destruction control.</b> Yubel forms float on destruction (immune to battle). Terror Incarnate wipes all other monsters each End Phase. Spirit of Yubel (quick-effect tribute) forces you to destroy a Yubel, triggering the float chain.</p>
+  <p><b>Choke:</b> <b>Banish, don't destroy</b> — they WANT destruction. Mirrorjade's banish is perfect. Called by the Grave on Spirit of Yubel. D-Shifter shuts down their GY float chain.</p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Labrynth</h4>
+  <p><b>Pure trap control.</b> Normal Traps remove your monsters, triggering Labrynth monster effects. Lovely Labrynth prevents you from responding to traps. Lady Labrynth sets traps from Deck. Grindy and recursive.</p>
+  <p><b>Choke:</b> Anti-trap cards (Royal Decree, Red Reboot). Cosmic Cyclone their set cards before they activate. They're slow Turn 1 (traps can't activate the turn they're set). Push for game early.</p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Kashtira</h4>
+  <p><b>Face-down banish control.</b> Banishes from your Deck, field, hand, and GY. Arise-Heart (Xyz boss) banishes a card each time anything is banished. Kashtira Birth recurs their monsters.</p>
+  <p><b>Choke:</b> Ash/Imperm → Unicorn or Riseheart. Without Birth face-up, their recursion collapses. Remove Birth with S/T removal.</p></div>
+  <div class="mu-e" style="border-color:var(--or)"><h4>Snake-Eye Fire King</h4>
+  <p><b>FIRE combo/control hybrid.</b> No longer tier 1 after banlist hits, but Fire King gives it recursion. Everything floats on destruction.</p>
+  <p><b>Choke:</b> <b>Banish, don't destroy</b> (everything floats). Ash → Snake-Eye Ash (starter). D-Shifter devastating. Still shows up at regionals.</p></div>`;
   s.appendChild(rg);
 
   s.insertAdjacentHTML('afterbegin','<div class="pnl"><h2>Matchups</h2><div class="cpt cpt-bl"><h4>300th YCS Richmond Results (Feb 2026)</h4><p>Winner: Yummy. Runner-up: Vanquish Soul. Top 4: Memento, Dracotail. Top 8: 2x Maliss, Dracotail, Lunalight. 2,252 players.</p></div></div>');
