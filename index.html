@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Pure Branded — 2026 Regional Guide</title>
+<title>Branded Despia — 2026 Regional Guide</title>
 <style>
 /* Tailwind-inspired type scale: xs=0.75rem, sm=0.875rem, base=1rem, lg=1.125rem, xl=1.25rem, 2xl=1.5rem, 3xl=1.875rem */
 :root{--bg:#0a0e14;--s1:#131920;--s2:#1a2230;--s3:#222d3d;--bd:#2a3545;--tx:#e2e8f0;--mu:#94a3b8;--ac:#8b5cf6;--ac2:#a78bfa;--gd:#f0b429;--rd:#ef4444;--gn:#22c55e;--bl:#3b82f6;--or:#f59e0b;--cy:#06b6d4;--pk:#ec4899;--tl:#2dd4bf}
@@ -129,7 +129,7 @@ body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'H
 <body>
 <div class="app">
   <div class="hdr">
-    <h1>Pure Branded — 2026 Regional Guide</h1>
+    <h1>Branded Despia — 2026 Regional Guide</h1>
     <p>Post-Burst Protocol · Click any card for full effect text</p>
     <div class="cd" id="countdown"></div>
   </div>
@@ -381,7 +381,7 @@ ed:[
 
   ['Rindbrumm the Striking Dragon','Rindbrumm the Striking Dragon',['bo','mu'],
     '<b>Goal:</b> L8 Fusion (Albaz + 1 Beast/Beast-Warrior/Winged Beast). Quick Effect: when a Fusion/Synchro/Xyz/Link activates, negate it and optionally bounce 1 monster. GY (opponent\'s turn): revive itself or target Albaz from GY.',
-    'ED monster effect negate + bounce. Materials aren\'t natural in pure Branded — mainly made via Fallen of Albaz\'s on-field contact fusion using opponent\'s monsters, or Super Poly. GY revival gives recurring value. Run 0-1 in ED.',null],
+    'ED monster effect negate + bounce. Materials aren\'t natural in Branded Despia — mainly made via Fallen of Albaz\'s on-field contact fusion using opponent\'s monsters, or Super Poly. GY revival gives recurring value. Run 0-1 in ED.',null],
 
   ['The Dragon that Devours the Dogma','The Dragon that Devours the Dogma',['bo'],
     '<b>Goal:</b> L8 Fusion (Albaz + 1 LIGHT/DARK + 1 Effect Monster). On summon: shuffle up to 2 cards from any GY(s)/banished into Deck. While Ecclesia is on field/in either GY: gains 500 ATK and <b>unaffected by other card effects</b>. GY End Phase: search Dogmatika or Tri-Brigade.',
@@ -477,56 +477,83 @@ function build(){
 
   // HOW IT WORKS
   R.insertAdjacentHTML('beforeend',`<div class="sec act" id="sec-how"><div class="pnl">
-  <h2>How Pure Branded Works in 2026</h2>
-  <div class="cpt"><h4>One-Sentence Summary</h4>
-  <p>Send Fusion Monsters from Extra Deck to GY (via Branded Fusion, Fallen of White, or High Spirits) — those Fusions trigger free effects in the GY, so the "cost" of your plays is pure advantage.</p></div>
+  <h2>Branded Despia — 2026 Regional Guide</h2>
 
-  <h3>The Plus Engine</h3>
-  <div class="cpt cpt-gn"><h4>Step 1 — Send from Deck/ED, not hand</h4>
-  <p><b>Branded Fusion</b> sends from Main Deck. <b>Fallen of White</b> sends from Extra Deck (as cost!). <b>High Spirits</b> sends from Extra Deck. You never lose hand cards.</p></div>
+  <div class="cpt cpt-bl"><h4>TL;DR — What Is This Deck?</h4>
+  <p>Branded Despia is a <b>Fusion-based grind deck</b> that generates advantage by sending Fusion Monsters from the Extra Deck to the GY — where they trigger free effects. You build board presence across BOTH turns: set up on your turn, then fuse again and disrupt on the opponent's. The deck has <b>three independent starter lines</b> (Branded Fusion, Fallen of White, High Spirits), so getting one negated doesn't end your turn. In 2026, the Despia engine is trimmed to just <b>Aluber</b> (searches Branded spells) while BPRO support (Fallen of White, Shrouded, High Spirits, The Fallen &amp; The Virtuous) provides massive consistency.</p></div>
 
-  <div class="cpt cpt-gn"><h4>Step 2 — Everything triggers in the GY</h4>
-  <p><b>Albion the Branded</b> → End Phase: set Branded in Red (free opp-turn fusion) or Branded Retribution (counter trap negate).<br>
-  <b>Titaniklad</b> → End Phase: search/summon Blazing Cartesia or Guiding Quem from Deck.<br>
-  <b>Albion the Shrouded</b> → sends Branded Retribution to GY (→ banish it → recover Branded Fusion).<br>
-  <b>Blazing Cartesia</b> + <b>High Spirits</b> → return to hand every End Phase.</p></div>
+  <div class="cpt cpt-gn"><h4>Going First — The Goal</h4>
+  <p>End on <b>Mirrorjade</b> (non-targeting banish + End Phase board wipe) + <b>Branded in Red set</b> (Quick-Play opp-turn Fusion Summon). Ideally also Ecclesia Synchro (recruits Cartesia on opp turn for another fusion) and/or Mercourier in hand (monster effect negate). Albion the Sanctifire Dragon enables a hard lock by summoning Archlord Kristya to the opponent's field.</p></div>
 
-  <div class="cpt cpt-bl"><h4>Step 3 — Fusions are stepping stones</h4>
-  <p>Albion (Fusion #1) → Lubellion (#2) → Mirrorjade (boss). Each going to GY triggers more. One spell cascades into a full board.</p></div>
+  <div class="cpt cpt-or"><h4>Going Second — The Goal</h4>
+  <p>Mulcharmy Fuwalos x3 is your going-second hand trap — if they combo, you draw tons. Use Forbidden Droplet to break boards. Khaos Starsource Dragon destroys up to 2 cards on Fusion Summon. The Fallen &amp; The Virtuous destroys a face-up card while triggering GY effects. Once you stabilize, the grind engine takes over.</p></div>
 
-  <div class="cpt cpt-or"><h4>Step 4 — You play on BOTH turns</h4>
+  <h3>The Plus Engine — Why Everything Is Free</h3>
+  <div class="cpt"><h4>Step 1 — Send from Deck/ED, not hand</h4>
+  <p><b>Branded Fusion</b> sends from Main Deck. <b>Fallen of White</b> sends from Extra Deck (as COST — can't be negated!). <b>High Spirits</b> sends from Extra Deck. <b>The Fallen &amp; The Virtuous</b> sends from Extra Deck + destroys a card. You rarely lose hand cards.</p></div>
+
+  <div class="cpt"><h4>Step 2 — Everything triggers in the GY</h4>
+  <p><b>Albion the Branded</b> → End Phase: set Branded in Red or Retribution from Deck.<br>
+  <b>Titaniklad</b> → End Phase: add/summon Cartesia or Quem from Deck.<br>
+  <b>Albion the Shrouded</b> → sends Branded Retribution to GY → banish it → recover Branded Fusion.<br>
+  <b>Blazing Cartesia</b> + <b>High Spirits</b> → return to hand every End Phase (infinite grind).</p></div>
+
+  <div class="cpt"><h4>Step 3 — Fusions are stepping stones</h4>
+  <p>Albion → Lubellion → Mirrorjade. Each going to GY triggers more. One Branded Fusion cascades into a full board. Granguignol starts a recycling chain that gets Branded Fusion + Cartesia back every turn.</p></div>
+
+  <div class="cpt"><h4>Step 4 — You play on BOTH turns</h4>
   <p>Your turn: Mirrorjade + Branded in Red set.<br>
-  Opponent's turn: Branded in Red (Quick-Play fusion), Ecclesia Synchro (quick recruit → Cartesia → fusion), Mirrorjade (banish), Mercourier (negate from hand/field), Branded Retribution (Spell Speed 3 negate).</p></div>
+  Opponent's turn: <b>Branded in Red</b> (Quick-Play fusion into Mirrorjade/Sanctifire), <b>Ecclesia Synchro</b> (banish self → recruit Cartesia → quick-fuse), <b>Mirrorjade</b> (banish a monster), <b>Mercourier</b> (hand negate), <b>Branded Retribution</b> (SS3 negate).</p></div>
 
-  <h3>Three Independent Lines</h3>
-  <div class="flow">PLAN A — Branded Fusion
+  <h3>Three Independent Starter Lines</h3>
+  <div class="flow">PLAN A — Branded Fusion (strongest)
   BF → Albion → Lubellion → Mirrorjade
-  Albion EP → set Branded in Red (opp-turn fusion)
+  Albion EP → set Branded in Red
 
 PLAN B — Fallen of White Dragon
-  FotW (send Albion from ED as cost) → recruit Ecclesia
-  → Synchro Ecclesia and the Dark Dragon
-  Opp turn: Ecclesia recruits Cartesia → fuses Mirrorjade
+  FotW sends Albion from ED (COST) → recruit Ecclesia
+  → FotW + Ecclesia → Synchro: Ecclesia and the Dark Dragon
+  → Albion EP → set Branded in Red
+  Opp turn: Ecclesia banishes self → recruits Cartesia → fuses Mirrorjade
 
-PLAN C — Branded in High Spirits Loop
-  High Spirits → send Fusion from ED (triggers GY)
+PLAN C — Branded in High Spirits (grind)
+  High Spirits → send Albion/Titan from ED (triggers GY)
   → discard → search Cartesia/FotW
   → End Phase: High Spirits + Cartesia return to hand
-  Repeatable every turn — infinite grind
+  Repeatable every turn — never runs out
 
 ALL THREE are independent. If one gets Ashed, pivot to another.</div>
 
-  <h3>The Granguignol Recycling Loop</h3>
+  <h3>Key Combos</h3>
+  <div class="cpt"><h4>Ecclesia Synchro Line (FotW + Ecclesia)</h4>
+  <p>Fallen of White (L4, treated as Albaz) + Incredible Ecclesia (L4 Tuner) = <b>Ecclesia and the Dark Dragon</b> (L8 Synchro). During opponent's turn, Ecclesia banishes herself from GY → recruits Blazing Cartesia from Deck → Cartesia quick-effect fuses Mirrorjade. This is your primary opponent's-turn Mirrorjade line when you open FotW.</p></div>
+
+  <div class="cpt"><h4>Granguignol Recycling Loop</h4>
   <div class="flow">Blazing Cartesia + LIGHT/DARK on field
 → Quick-effect Fusion: Granguignol
 → Granguignol sends Albion Shrouded from Deck to GY
 → Shrouded sends Branded Retribution from Deck to GY
 → Banish Retribution → recover Branded Fusion from GY
 → End Phase: Cartesia returns to hand
-= Branded Fusion + Cartesia back for next turn</div>
+= Branded Fusion + Cartesia back for next turn</div></div>
+
+  <div class="cpt"><h4>Gold Sarcophagus → Mercourier Search</h4>
+  <p>Gold Sarc banishes Mercourier from Deck face-up → triggers Mercourier's "if banished" search → add Cartesia, FotW, or any Albaz-mentioning monster. Instant +1, and Mercourier comes to hand 2 turns later as a bonus.</p></div>
+
+  <div class="cpt"><h4>Sanctifire Lock</h4>
+  <p>Dump a floodgate (Archlord Kristya) to GY during your combo. On opponent's turn, Albion the Sanctifire Dragon's Quick Effect summons Kristya to <b>their</b> field (neither player can Special Summon) while recovering a monster to yours. Your board is established, so the lock only hurts them.</p></div>
+
+  <h3>Key Decisions During a Game</h3>
+  <div class="cpt"><h4>Albion End Phase: Red vs Retribution vs White?</h4>
+  <p><b>Branded in Red</b> — default. Gives you an opponent's-turn Fusion Summon (Mirrorjade/Sanctifire).<br>
+  <b>Branded Retribution</b> — set if you already have Red, or expect combo decks (Spell Speed 3 negate).<br>
+  <b>Branded in White</b> — if you need Normal Spell fusion access next turn (more flexible materials than BF).</p></div>
+
+  <div class="cpt"><h4>Branded Opening: when to use?</h4>
+  <p>Opening x3 is your consistency backbone. Discard 1 → search Aluber → Aluber searches Branded Fusion. Two-card chain that finds your best card. GY effect: banish to protect a Fusion from destruction (don't forget this!).</p></div>
 
   <div class="cpt"><h4>2026 Change: Trimmed Despia Package</h4>
-  <p>Modern pure Branded dropped most of the Despia engine (Comedy, Tragedy, Ad Libitum) but keeps <b>Aluber</b> (1-2 copies) as a standalone searcher — his on-summon Branded Fusion search is too good to cut. The BPRO support (Fallen of White, High Spirits x3, Shrouded x3, The Fallen &amp; The Virtuous x3) replaces the rest of the Despia package.</p></div>
+  <p>Modern Branded Despia dropped most of the Despia engine (Comedy, Tragedy, Ad Libitum) but keeps <b>Aluber x3</b> as a core searcher — his on-summon search is too good to cut. <b>Branded Opening x3</b> finds Aluber. The BPRO support (Fallen of White, High Spirits x3, Shrouded, The Fallen &amp; The Virtuous x3) replaces the rest. Most lists also cut Bystial Lubellion + Branded Lost, relying on the BPRO starters' resilience instead.</p></div>
   </div></div>`);
 
   // ALL CARDS
